@@ -12,12 +12,27 @@ namespace TrabalhoGrafica2
 {   
     public partial class CaixinhaDesenho : Form
     {
+        private bool pintar = false;
+        public bool propPintar
+        {
+            get
+            {
+                return pintar;
+            }
+            set
+            {
+                pintar = value;
+            }
+        }
         // Coordenadas - Propriedades
         public int propX1 
         {
             get
             {
-                return Int32.Parse(txtX1.Text);
+                if (txtX1.Text != "")
+                    return Int32.Parse(txtX1.Text);
+                else
+                    return 0;
             }           
             
         }
@@ -26,7 +41,10 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                return Int32.Parse(txtX2.Text);
+                if (txtX2.Text != "")
+                    return Int32.Parse(txtX2.Text);
+                else
+                    return 0;
             }
 
         }
@@ -34,7 +52,10 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                return Int32.Parse(txtY1.Text);
+                if (txtY1.Text != "")
+                        return Int32.Parse(txtY1.Text);
+                else
+                    return 0;
             }
 
         }
@@ -42,7 +63,10 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                return Int32.Parse(txtY2.Text);
+                if (txtY2.Text != "")
+                    return Int32.Parse(txtY2.Text);
+                else
+                    return 0;
             }
 
         }
@@ -54,11 +78,6 @@ namespace TrabalhoGrafica2
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -66,7 +85,40 @@ namespace TrabalhoGrafica2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pintar = true;
             this.Close();
+        }
+
+        private void txtX1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtY1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtX2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtY2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

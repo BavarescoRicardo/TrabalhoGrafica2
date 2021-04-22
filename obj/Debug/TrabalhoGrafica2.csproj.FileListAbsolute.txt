@@ -1,7 +1,6 @@
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.exe.config
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.exe
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.pdb
-C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csprojAssemblyReference.cache
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.Properties.Resources.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csproj.GenerateResource.cache
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csproj.CoreCompileInputs.cache
@@ -9,3 +8,4 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\Tra
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.pdb
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.CaixinhaDesenho.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frnPrincipal.resources
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csprojAssemblyReference.cache

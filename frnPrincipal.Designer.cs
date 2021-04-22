@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlDesenho = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.listaDesenhos = new System.Windows.Forms.ListBox();
-            this.btnSair = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.pnlDesenho = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +50,21 @@
             this.panel1.Size = new System.Drawing.Size(763, 544);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(330, 512);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Largura : 500                 Altura : 500";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.btnSair);
+            this.panel3.Controls.Add(this.btnRemover);
             this.panel3.Controls.Add(this.listaDesenhos);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Location = new System.Drawing.Point(10, 0);
@@ -61,13 +72,27 @@
             this.panel3.Size = new System.Drawing.Size(206, 507);
             this.panel3.TabIndex = 1;
             // 
-            // pnlDesenho
+            // btnRemover
             // 
-            this.pnlDesenho.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlDesenho.Location = new System.Drawing.Point(222, 7);
-            this.pnlDesenho.Name = "pnlDesenho";
-            this.pnlDesenho.Size = new System.Drawing.Size(500, 500);
-            this.pnlDesenho.TabIndex = 0;
+            this.btnRemover.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(0, 37);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnRemover.Size = new System.Drawing.Size(206, 37);
+            this.btnRemover.TabIndex = 2;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // listaDesenhos
+            // 
+            this.listaDesenhos.FormattingEnabled = true;
+            this.listaDesenhos.Location = new System.Drawing.Point(26, 141);
+            this.listaDesenhos.Name = "listaDesenhos";
+            this.listaDesenhos.Size = new System.Drawing.Size(149, 329);
+            this.listaDesenhos.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -83,41 +108,14 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // pnlDesenho
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 512);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Largura : 500                 Altura : 500";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // listaDesenhos
-            // 
-            this.listaDesenhos.FormattingEnabled = true;
-            this.listaDesenhos.Items.AddRange(new object[] {
-            "Ponto",
-            "Linha"});
-            this.listaDesenhos.Location = new System.Drawing.Point(26, 141);
-            this.listaDesenhos.Name = "listaDesenhos";
-            this.listaDesenhos.Size = new System.Drawing.Size(149, 329);
-            this.listaDesenhos.TabIndex = 1;
-            // 
-            // btnSair
-            // 
-            this.btnSair.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(0, 37);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnSair.Size = new System.Drawing.Size(206, 37);
-            this.btnSair.TabIndex = 2;
-            this.btnSair.Text = "Remover";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.pnlDesenho.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlDesenho.Location = new System.Drawing.Point(222, 7);
+            this.pnlDesenho.Name = "pnlDesenho";
+            this.pnlDesenho.Size = new System.Drawing.Size(500, 500);
+            this.pnlDesenho.TabIndex = 0;
+            this.pnlDesenho.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesenho_Paint);
             // 
             // frnPrincipal
             // 
@@ -141,7 +139,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listaDesenhos;
-        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnRemover;
     }
 }
 

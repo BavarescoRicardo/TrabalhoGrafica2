@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,22 +13,29 @@ namespace TrabalhoGrafica2
 {
     public partial class frnPrincipal : Form
     {
-        // Objetos de senho
-        Graphics gr;
+        // Objetos de desenho
+       Graphics gr;
+       List<Point> listaPontos = new List<Point>();        
         CaixinhaDesenho cxDesenho = new CaixinhaDesenho();
+        int contLinha = 0;
         public frnPrincipal()
         {
             InitializeComponent();            
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {            
+        {
+            cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
             desenharLinha();
         }
 
         public void desenharLinha()
         {
+            if (!cxDesenho.propPintar)
+            {
+                return;
+            }
             // Create pen.
             Pen blackPen = new Pen(Color.Black, 3);
 
@@ -40,12 +48,59 @@ namespace TrabalhoGrafica2
             // Draw line to screen.
             gr = pnlDesenho.CreateGraphics();
             gr.DrawLine(blackPen, x1, y1, x2, y2);
-            listaDesenhos.Items.Add("Deseninho");
+
+            listaPontos.Add(new Point(x1, y1));
+            listaPontos.Add(new Point(x2, y2));
+
+            listaDesenhos.Items.Add("Deseninho "+ contLinha);
+            contLinha++;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            listaDesenhos.Items.RemoveAt(0);
+            // Validações
+            if (!(listaDesenhos.SelectedIndex >= 0))
+                return;
+            // Apagar pintando o mesmo desenho de branco
+            // Magia não mexa
+            gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex+1)],
+                listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex+2)]);            
+
+            listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
+            contLinha--;           
         }
-    }
+/*
+        void testespaineu()
+        {
+            Panel p1 = new Panel();
+//                        p1.Width = 400;
+//                        p1.Height = 400;
+            p1.Dock = DockStyle.Fill;
+            p1.BackColor = Color.GreenYellow;
+            
+            p1.Visible = true;            
+            p1.BringToFront();
+            Graphics gPn1;
+            gPn1 = p1.CreateGraphics();
+            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
+            gPn1.DrawLine(new Pen(Color.Red, 3), 10, 10, 200, 200);
+            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
+            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
+            gPn1.DrawLine(new Pen(Color.White, 4), 200, 300, 200, 400);
+
+
+
+            //p1.Parent = pnlDesenho;
+            pnlDesenho.Controls.Add(p1);
+            //pnlDesenho.Controls[0].Location = new Point(0, 0);
+            //            pnlDesenho.Controls[0].Visible = true;
+            //            pnlDesenho.Controls[0].BringToFront();
+            //  pnlDesenho.Controls[0]
+        }
+*/
+        private void pnlDesenho_Paint(object sender, PaintEventArgs e)
+        {
+        }
+    }   
+
 }

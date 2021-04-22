@@ -58,6 +58,9 @@
     <Compile Include="frnPrincipal.Designer.cs">
       <DependentUpon>frnPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PainelDesenhoTrans.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CaixinhaDesenho.resx">

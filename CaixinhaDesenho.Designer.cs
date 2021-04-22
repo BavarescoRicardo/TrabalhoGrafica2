@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtX1 = new System.Windows.Forms.TextBox();
-            this.txtX2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtY1 = new System.Windows.Forms.TextBox();
-            this.txtY2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtY2 = new System.Windows.Forms.TextBox();
+            this.txtY1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtX2 = new System.Windows.Forms.TextBox();
+            this.txtX1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,74 +61,15 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // txtX1
+            // label5
             // 
-            this.txtX1.Location = new System.Drawing.Point(13, 89);
-            this.txtX1.Name = "txtX1";
-            this.txtX1.Size = new System.Drawing.Size(100, 20);
-            this.txtX1.TabIndex = 0;
-            this.txtX1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtX2
-            // 
-            this.txtX2.Location = new System.Drawing.Point(13, 149);
-            this.txtX2.Name = "txtX2";
-            this.txtX2.Size = new System.Drawing.Size(100, 20);
-            this.txtX2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(13, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 35);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Linha";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(13, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Inicio";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(13, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fim";
-            // 
-            // txtY1
-            // 
-            this.txtY1.Location = new System.Drawing.Point(119, 89);
-            this.txtY1.Name = "txtY1";
-            this.txtY1.Size = new System.Drawing.Size(100, 20);
-            this.txtY1.TabIndex = 5;
-            // 
-            // txtY2
-            // 
-            this.txtY2.Location = new System.Drawing.Point(119, 149);
-            this.txtY2.Name = "txtY2";
-            this.txtY2.Size = new System.Drawing.Size(100, 20);
-            this.txtY2.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(168, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 15);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Y";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -140,15 +81,77 @@
             this.label4.Text = "X";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // button1
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(168, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Y";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.Location = new System.Drawing.Point(42, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Confirmar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtY2
+            // 
+            this.txtY2.Location = new System.Drawing.Point(119, 149);
+            this.txtY2.Name = "txtY2";
+            this.txtY2.Size = new System.Drawing.Size(100, 20);
+            this.txtY2.TabIndex = 6;
+            this.txtY2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtY2_KeyPress);
+            // 
+            // txtY1
+            // 
+            this.txtY1.Location = new System.Drawing.Point(119, 89);
+            this.txtY1.Name = "txtY1";
+            this.txtY1.Size = new System.Drawing.Size(100, 20);
+            this.txtY1.TabIndex = 5;
+            this.txtY1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtY1_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(13, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fim";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(13, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Inicio";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 35);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Linha";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtX2
+            // 
+            this.txtX2.Location = new System.Drawing.Point(13, 149);
+            this.txtX2.Name = "txtX2";
+            this.txtX2.Size = new System.Drawing.Size(100, 20);
+            this.txtX2.TabIndex = 1;
+            this.txtX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtX2_KeyPress);
+            // 
+            // txtX1
+            // 
+            this.txtX1.Location = new System.Drawing.Point(13, 89);
+            this.txtX1.Name = "txtX1";
+            this.txtX1.Size = new System.Drawing.Size(100, 20);
+            this.txtX1.TabIndex = 0;
+            this.txtX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtX1_KeyPress);
             // 
             // CaixinhaDesenho
             // 
