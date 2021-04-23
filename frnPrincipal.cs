@@ -17,7 +17,7 @@ namespace TrabalhoGrafica2
        Graphics gr;
        List<Point> listaPontos = new List<Point>();        
         CaixinhaDesenho cxDesenho = new CaixinhaDesenho();
-        int contLinha = 0;
+        int contLinha,contagemLinhasExibir = 0;
         public frnPrincipal()
         {
             InitializeComponent();            
@@ -52,8 +52,9 @@ namespace TrabalhoGrafica2
             listaPontos.Add(new Point(x1, y1));
             listaPontos.Add(new Point(x2, y2));
 
-            listaDesenhos.Items.Add("Deseninho "+ contLinha);
+            listaDesenhos.Items.Add("Deseninho "+ contagemLinhasExibir);
             contLinha++;
+            contagemLinhasExibir++;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -63,11 +64,11 @@ namespace TrabalhoGrafica2
                 return;
             // Apagar pintando o mesmo desenho de branco
             // Magia não mexa
-            gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex+1)],
-                listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex+2)]);            
+            gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex*2)],
+                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2)+1)]);            
 
             listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
-            contLinha--;           
+            //recalcularIndices(listaDesenhos.SelectedIndex);                       
         }
 /*
         void testespaineu()
@@ -98,6 +99,17 @@ namespace TrabalhoGrafica2
             //  pnlDesenho.Controls[0]
         }
 */
+
+        private void recalcularIndices(int posicaoReduzida)
+        {
+            if (contLinha == 0)
+                return;
+
+            // Se removi o ultimo vallor é só Reduzir lista de indices
+            if (contLinha == posicaoReduzida)
+                contLinha--;
+
+        }
         private void pnlDesenho_Paint(object sender, PaintEventArgs e)
         {
         }
