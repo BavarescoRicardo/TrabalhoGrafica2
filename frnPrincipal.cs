@@ -65,12 +65,12 @@ namespace TrabalhoGrafica2
             // Apagar pintando o mesmo desenho de branco
             // Magia não mexa
             gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex*2)],
-                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2)+1)]);            
-
+                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2)+1)]);
+            recalcularIndices(listaDesenhos.SelectedIndex);
             listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
-            //recalcularIndices(listaDesenhos.SelectedIndex);                       
         }
 /*
+ * Talvez seja mais inteligente usar uma lista de paineis para cada desenho com o fundo transparente 
         void testespaineu()
         {
             Panel p1 = new Panel();
@@ -102,13 +102,28 @@ namespace TrabalhoGrafica2
 
         private void recalcularIndices(int posicaoReduzida)
         {
+            int indiceAtual = 0;
             if (contLinha == 0)
                 return;
 
-            // Se removi o ultimo vallor é só Reduzir lista de indices
-            if (contLinha == posicaoReduzida)
+            // Se o só existia 1 desenho na lista e este foi removido é só remover direto 2 indices
+            if ((listaPontos.Count) == 2)
+            {                
                 contLinha--;
+                listaPontos.RemoveAt(1);
+                listaPontos.RemoveAt(0);
+                return;
+            }
 
+            // Caso exista mais de 1 item na lista
+            indiceAtual = posicaoReduzida*2;
+            while (indiceAtual < listaPontos.Count-1)
+            {
+                listaPontos[indiceAtual-1] = listaPontos[indiceAtual];
+                indiceAtual++;
+            }
+            listaPontos.RemoveAt(listaPontos.Count-1);
+            listaPontos.RemoveAt(listaPontos.Count-1);
         }
         private void pnlDesenho_Paint(object sender, PaintEventArgs e)
         {
