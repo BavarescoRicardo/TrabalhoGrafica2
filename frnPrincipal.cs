@@ -103,6 +103,7 @@ namespace TrabalhoGrafica2
         private void recalcularIndices(int posicaoReduzida)
         {
             int indiceAtual = 0;
+            posicaoReduzida++;
             if (contLinha == 0)
                 return;
 
@@ -115,11 +116,20 @@ namespace TrabalhoGrafica2
                 return;
             }
 
+            // Caso o indice removido seja o ultimo da lista
+            if ((listaPontos.Count) == (posicaoReduzida*2))
+            {
+                contLinha--;
+                listaPontos.RemoveAt(listaPontos.Count-1);
+                listaPontos.RemoveAt(listaPontos.Count-1);
+                return;
+            }
+
             // Caso exista mais de 1 item na lista
             indiceAtual = posicaoReduzida*2;
-            while (indiceAtual < listaPontos.Count-1)
+            while (indiceAtual <= listaPontos.Count)
             {
-                listaPontos[indiceAtual-1] = listaPontos[indiceAtual];
+                listaPontos[indiceAtual-2] = listaPontos[indiceAtual - 1];
                 indiceAtual++;
             }
             listaPontos.RemoveAt(listaPontos.Count-1);
