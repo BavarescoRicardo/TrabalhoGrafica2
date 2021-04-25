@@ -54,25 +54,25 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtY2PoliLinha = new System.Windows.Forms.TextBox();
             this.txtY1PoliLinha = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtX2PoliLinha = new System.Windows.Forms.TextBox();
             this.txtX1PoliLinha = new System.Windows.Forms.TextBox();
             this.tabPoligono = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtY2Poligono = new System.Windows.Forms.TextBox();
             this.txtY1Poligono = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtX2Poligono = new System.Windows.Forms.TextBox();
             this.txtX1Poligono = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.listPolilinha = new System.Windows.Forms.ListBox();
+            this.btnAddPonto = new System.Windows.Forms.Button();
+            this.btnRmvPonto = new System.Windows.Forms.Button();
+            this.btnRmvPontoPoligono = new System.Windows.Forms.Button();
+            this.btnAddPontoPoligono = new System.Windows.Forms.Button();
+            this.listPoligono = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.abaDesenho.SuspendLayout();
             this.tabPonto.SuspendLayout();
@@ -303,14 +303,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.btnRmvPonto);
+            this.panel3.Controls.Add(this.btnAddPonto);
+            this.panel3.Controls.Add(this.listPolilinha);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.txtY2PoliLinha);
             this.panel3.Controls.Add(this.txtY1PoliLinha);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.txtX2PoliLinha);
             this.panel3.Controls.Add(this.txtX1PoliLinha);
             this.panel3.Location = new System.Drawing.Point(0, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
@@ -322,7 +322,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(40, 31);
+            this.label11.Location = new System.Drawing.Point(16, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 17);
             this.label11.TabIndex = 38;
@@ -331,7 +331,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(265, 108);
+            this.label12.Location = new System.Drawing.Point(236, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(15, 15);
             this.label12.TabIndex = 37;
@@ -341,57 +341,33 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(104, 108);
+            this.label13.Location = new System.Drawing.Point(75, 57);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 15);
             this.label13.TabIndex = 36;
             this.label13.Text = "X";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtY2PoliLinha
-            // 
-            this.txtY2PoliLinha.Location = new System.Drawing.Point(208, 183);
-            this.txtY2PoliLinha.Name = "txtY2PoliLinha";
-            this.txtY2PoliLinha.Size = new System.Drawing.Size(123, 23);
-            this.txtY2PoliLinha.TabIndex = 35;
-            // 
             // txtY1PoliLinha
             // 
-            this.txtY1PoliLinha.Location = new System.Drawing.Point(208, 126);
+            this.txtY1PoliLinha.Location = new System.Drawing.Point(179, 75);
             this.txtY1PoliLinha.Name = "txtY1PoliLinha";
             this.txtY1PoliLinha.Size = new System.Drawing.Size(123, 23);
             this.txtY1PoliLinha.TabIndex = 34;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(43, 157);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(30, 17);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Fim";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(43, 96);
+            this.label15.Location = new System.Drawing.Point(14, 45);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(40, 17);
             this.label15.TabIndex = 32;
             this.label15.Text = "Inicio";
             // 
-            // txtX2PoliLinha
-            // 
-            this.txtX2PoliLinha.Location = new System.Drawing.Point(43, 183);
-            this.txtX2PoliLinha.Name = "txtX2PoliLinha";
-            this.txtX2PoliLinha.Size = new System.Drawing.Size(133, 23);
-            this.txtX2PoliLinha.TabIndex = 31;
-            // 
             // txtX1PoliLinha
             // 
-            this.txtX1PoliLinha.Location = new System.Drawing.Point(43, 126);
+            this.txtX1PoliLinha.Location = new System.Drawing.Point(14, 75);
             this.txtX1PoliLinha.Name = "txtX1PoliLinha";
             this.txtX1PoliLinha.Size = new System.Drawing.Size(133, 23);
             this.txtX1PoliLinha.TabIndex = 30;
@@ -409,14 +385,14 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.Controls.Add(this.btnRmvPontoPoligono);
+            this.panel4.Controls.Add(this.btnAddPontoPoligono);
+            this.panel4.Controls.Add(this.listPoligono);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.txtY2Poligono);
             this.panel4.Controls.Add(this.txtY1Poligono);
-            this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.txtX2Poligono);
             this.panel4.Controls.Add(this.txtX1Poligono);
             this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -428,7 +404,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label17.Location = new System.Drawing.Point(47, 34);
+            this.label17.Location = new System.Drawing.Point(21, 13);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 17);
             this.label17.TabIndex = 38;
@@ -437,7 +413,7 @@
             // label18
             // 
             this.label18.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(272, 121);
+            this.label18.Location = new System.Drawing.Point(246, 56);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(15, 15);
             this.label18.TabIndex = 37;
@@ -447,57 +423,33 @@
             // label19
             // 
             this.label19.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(111, 121);
+            this.label19.Location = new System.Drawing.Point(85, 56);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(15, 15);
             this.label19.TabIndex = 36;
             this.label19.Text = "X";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtY2Poligono
-            // 
-            this.txtY2Poligono.Location = new System.Drawing.Point(215, 196);
-            this.txtY2Poligono.Name = "txtY2Poligono";
-            this.txtY2Poligono.Size = new System.Drawing.Size(123, 23);
-            this.txtY2Poligono.TabIndex = 35;
-            // 
             // txtY1Poligono
             // 
-            this.txtY1Poligono.Location = new System.Drawing.Point(215, 139);
+            this.txtY1Poligono.Location = new System.Drawing.Point(189, 74);
             this.txtY1Poligono.Name = "txtY1Poligono";
             this.txtY1Poligono.Size = new System.Drawing.Size(123, 23);
             this.txtY1Poligono.TabIndex = 34;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label20.Location = new System.Drawing.Point(50, 170);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(30, 17);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "Fim";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label21.Location = new System.Drawing.Point(50, 109);
+            this.label21.Location = new System.Drawing.Point(24, 44);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 17);
             this.label21.TabIndex = 32;
             this.label21.Text = "Inicio";
             // 
-            // txtX2Poligono
-            // 
-            this.txtX2Poligono.Location = new System.Drawing.Point(50, 196);
-            this.txtX2Poligono.Name = "txtX2Poligono";
-            this.txtX2Poligono.Size = new System.Drawing.Size(133, 23);
-            this.txtX2Poligono.TabIndex = 31;
-            // 
             // txtX1Poligono
             // 
-            this.txtX1Poligono.Location = new System.Drawing.Point(50, 139);
+            this.txtX1Poligono.Location = new System.Drawing.Point(24, 74);
             this.txtX1Poligono.Name = "txtX1Poligono";
             this.txtX1Poligono.Size = new System.Drawing.Size(133, 23);
             this.txtX1Poligono.TabIndex = 30;
@@ -522,6 +474,62 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(385, 93);
             this.panel5.TabIndex = 1;
+            // 
+            // listPolilinha
+            // 
+            this.listPolilinha.FormattingEnabled = true;
+            this.listPolilinha.ItemHeight = 16;
+            this.listPolilinha.Location = new System.Drawing.Point(14, 114);
+            this.listPolilinha.Name = "listPolilinha";
+            this.listPolilinha.Size = new System.Drawing.Size(251, 180);
+            this.listPolilinha.TabIndex = 39;
+            // 
+            // btnAddPonto
+            // 
+            this.btnAddPonto.Location = new System.Drawing.Point(271, 197);
+            this.btnAddPonto.Name = "btnAddPonto";
+            this.btnAddPonto.Size = new System.Drawing.Size(126, 23);
+            this.btnAddPonto.TabIndex = 40;
+            this.btnAddPonto.Text = "Adicionar Ponto";
+            this.btnAddPonto.UseVisualStyleBackColor = true;
+            this.btnAddPonto.Click += new System.EventHandler(this.btnAddPonto_Click);
+            // 
+            // btnRmvPonto
+            // 
+            this.btnRmvPonto.Location = new System.Drawing.Point(272, 257);
+            this.btnRmvPonto.Name = "btnRmvPonto";
+            this.btnRmvPonto.Size = new System.Drawing.Size(125, 23);
+            this.btnRmvPonto.TabIndex = 41;
+            this.btnRmvPonto.Text = "Remover Ponto";
+            this.btnRmvPonto.UseVisualStyleBackColor = true;
+            // 
+            // btnRmvPontoPoligono
+            // 
+            this.btnRmvPontoPoligono.Location = new System.Drawing.Point(280, 261);
+            this.btnRmvPontoPoligono.Name = "btnRmvPontoPoligono";
+            this.btnRmvPontoPoligono.Size = new System.Drawing.Size(125, 23);
+            this.btnRmvPontoPoligono.TabIndex = 44;
+            this.btnRmvPontoPoligono.Text = "Remover Ponto";
+            this.btnRmvPontoPoligono.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPontoPoligono
+            // 
+            this.btnAddPontoPoligono.Location = new System.Drawing.Point(279, 201);
+            this.btnAddPontoPoligono.Name = "btnAddPontoPoligono";
+            this.btnAddPontoPoligono.Size = new System.Drawing.Size(126, 23);
+            this.btnAddPontoPoligono.TabIndex = 43;
+            this.btnAddPontoPoligono.Text = "Adicionar Ponto";
+            this.btnAddPontoPoligono.UseVisualStyleBackColor = true;
+            this.btnAddPontoPoligono.Click += new System.EventHandler(this.btnAddPontoPoligono_Click);
+            // 
+            // listPoligono
+            // 
+            this.listPoligono.FormattingEnabled = true;
+            this.listPoligono.ItemHeight = 16;
+            this.listPoligono.Location = new System.Drawing.Point(22, 118);
+            this.listPoligono.Name = "listPoligono";
+            this.listPoligono.Size = new System.Drawing.Size(251, 180);
+            this.listPoligono.TabIndex = 42;
             // 
             // FormulariaCoordenadas
             // 
@@ -585,20 +593,20 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtY2PoliLinha;
         private System.Windows.Forms.TextBox txtY1PoliLinha;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtX2PoliLinha;
         private System.Windows.Forms.TextBox txtX1PoliLinha;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtY2Poligono;
         private System.Windows.Forms.TextBox txtY1Poligono;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtX2Poligono;
         private System.Windows.Forms.TextBox txtX1Poligono;
+        private System.Windows.Forms.ListBox listPolilinha;
+        private System.Windows.Forms.Button btnRmvPonto;
+        private System.Windows.Forms.Button btnAddPonto;
+        private System.Windows.Forms.Button btnRmvPontoPoligono;
+        private System.Windows.Forms.Button btnAddPontoPoligono;
+        private System.Windows.Forms.ListBox listPoligono;
     }
 }

@@ -12,10 +12,11 @@ namespace TrabalhoGrafica2
 {
     public partial class FormulariaCoordenadas : Form
     {
+        public List<Point> listaPoliLinha = new List<Point>();
+        public List<Point> listaPoligono = new List<Point>();
         public FormulariaCoordenadas()
         {
-            InitializeComponent();        
-            
+            InitializeComponent();            
         }
 
         public enum TipoDesenho
@@ -57,6 +58,7 @@ namespace TrabalhoGrafica2
 
 
         // Coordenadas Linha - Propriedades
+        // seleção de desenhos com condições nas propriedades pela aba selecionada
         public int propX1
         {
             get
@@ -70,16 +72,15 @@ namespace TrabalhoGrafica2
                         return Int32.Parse(txtX1Linha.Text);
 
                     case 2:
-                        return Int32.Parse(txtX1Ponto.Text);
+                        break;
 
                     case 3:
-                        return Int32.Parse(txtX1Ponto.Text);
+                        break;
 
                     default:
                         break;
                 }
-                return 0;
-                
+                return 0;                
             }
 
         }
@@ -97,10 +98,10 @@ namespace TrabalhoGrafica2
                         return Int32.Parse(txtY1Linha.Text);
 
                     case 2:
-                        return Int32.Parse(txtY1Ponto.Text);
+                        break;
 
                     case 3:
-                        return Int32.Parse(txtY1Ponto.Text);
+                        break;
 
                     default:
                         break;
@@ -123,10 +124,10 @@ namespace TrabalhoGrafica2
                         return Int32.Parse(txtX2Linha.Text);
 
                     case 2:
-                        return Int32.Parse(txtX2Linha.Text);
+                        break;
 
                     case 3:
-                        return Int32.Parse(txtX2Linha.Text);
+                        break;
 
                     default:
                         break;
@@ -149,10 +150,10 @@ namespace TrabalhoGrafica2
                         return Int32.Parse(txtY2Linha.Text);
 
                     case 2:
-                        return Int32.Parse(txtY2Linha.Text);
+                        break;
 
                     case 3:
-                        return Int32.Parse(txtY2Linha.Text);
+                        break;
 
                     default:
                         break;
@@ -220,7 +221,33 @@ namespace TrabalhoGrafica2
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             pintar = true;
-            this.Close();
+            this.Close();          
+        }
+
+        private void btnAddPonto_Click(object sender, EventArgs e)
+        {
+            // Adiciona os pontos digitados em um array de pontos
+            listaPoliLinha.Add(new Point(Int32.Parse(txtX1PoliLinha.Text), Int32.Parse(txtY1PoliLinha.Text)));
+
+            // Adiciona visualmente o novo ponto inserido no componente da tela
+            listPolilinha.Items.Add("X: " + txtX1PoliLinha.Text + "    Y: " + txtY1PoliLinha.Text);
+
+            // Limpar as caixas de texto
+            txtX1PoliLinha.Text = "";
+            txtY1PoliLinha.Text = "";
+        }
+
+        private void btnAddPontoPoligono_Click(object sender, EventArgs e)
+        {
+            // Adiciona os pontos digitados em um array de pontos
+            listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text), Int32.Parse(txtY1Poligono.Text)));
+
+            // Adiciona visualmente o novo ponto inserido no componente da tela
+            listPoligono.Items.Add("X: " + txtY1Poligono.Text + "    Y: " + txtY1Poligono.Text);
+
+            // Limpar as caixas de texto
+            txtX1PoliLinha.Text = "";
+            txtY1PoliLinha.Text = "";
         }
     }    
 }

@@ -16,7 +16,7 @@ namespace TrabalhoGrafica2
         // Objetos de desenho
        Graphics gr;
        List<Point> listaPontos = new List<Point>();
-        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
+       FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
        int contLinha,contagemLinhasExibir = 0;
         public frnPrincipal()
         {
@@ -40,11 +40,11 @@ namespace TrabalhoGrafica2
                     break;
 
                 case 2:
-                    desenharPonto();
+                    desenharPolilinha();
                     break;
 
                 case 3:
-                    desenharPonto();
+                    desenharPoligono();
                     break;
                 default:
                     break;
@@ -57,10 +57,10 @@ namespace TrabalhoGrafica2
             {
                 return;
             }
-            // Create pen.
+            // Create pincel
             Pen blackPen = new Pen(Color.Black, 3);
 
-            // Create coordinates of points that define line.
+            // Desenhar no painel principal
             int x1 = cxDesenho.propX1;
             int y1 = cxDesenho.propY1;
             int x2 = cxDesenho.propX2;
@@ -85,14 +85,14 @@ namespace TrabalhoGrafica2
             {
                 return;
             }
-            // Create pen.
+            // Create pincel
             Pen blackPen = new Pen(Color.Red, 3);
 
             // Create coordinates of points that define line.
             int x1 = cxDesenho.propX1;
             int y1 = cxDesenho.propY1;
 
-            // Draw line to screen.
+            // Desenhar no painel principal
             gr = pnlDesenho.CreateGraphics();
             gr.DrawLine(blackPen, x1, y1, x1+5, y1+5);
 
@@ -102,6 +102,75 @@ namespace TrabalhoGrafica2
             listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
             contLinha++;
             contagemLinhasExibir++;
+        }
+
+
+        public void desenharPolilinha()
+        {
+            if (!cxDesenho.propPintar)
+            {
+                return;
+            }
+            // Create pincel
+            Pen blackPen = new Pen(Color.Red, 3);
+
+            // Laço de numero de pontos na lista
+            int pontoAtual = 0;
+            while (pontoAtual < cxDesenho.listaPoliLinha.Count)
+            {
+                // Desenhar no painel principal
+                gr = pnlDesenho.CreateGraphics();
+                if (pontoAtual == 0)
+                {
+                    gr.DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual], cxDesenho.listaPoliLinha[pontoAtual + 1]);
+                    pontoAtual += 2;
+                }
+                else
+                {
+                    gr.DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual-1], cxDesenho.listaPoliLinha[pontoAtual]);
+                    pontoAtual += 1;
+                }
+                
+
+                listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
+                contLinha++;
+                contagemLinhasExibir++;
+            }
+        }
+
+        public void desenharPoligono()
+        {
+            if (!cxDesenho.propPintar)
+            {
+                return;
+            }
+            // Create pincel
+            Pen blackPen = new Pen(Color.Red, 3);
+
+            // Laço de numero de pontos na lista
+            int pontoAtual = 0;
+            while (pontoAtual < cxDesenho.listaPoliLinha.Count)
+            {
+                // Desenhar no painel principal
+                gr = pnlDesenho.CreateGraphics();
+                if (pontoAtual == 0)
+                {
+                    gr.DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual], cxDesenho.listaPoligono[pontoAtual + 1]);
+                    pontoAtual += 2;
+                }
+                else
+                {
+                    gr.DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual - 1], cxDesenho.listaPoligono[pontoAtual]);
+                    pontoAtual += 1;
+                }
+
+
+                listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
+                contLinha++;
+                contagemLinhasExibir++;
+            }
+            gr = pnlDesenho.CreateGraphics();
+            gr.DrawLine(blackPen, cxDesenho.listaPoligono[cxDesenho.listaPoligono.Count- 1], cxDesenho.listaPoligono[1]);
         }
 
 
@@ -147,6 +216,11 @@ namespace TrabalhoGrafica2
             //  pnlDesenho.Controls[0]
         }
 */
+
+        private void apagarPoli()
+        {
+
+        }
 
         private void recalcularIndices(int posicaoReduzida)
         {
