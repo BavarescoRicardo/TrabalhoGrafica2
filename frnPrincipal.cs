@@ -16,14 +16,14 @@ namespace TrabalhoGrafica2
         // Objetos de desenho
        Graphics gr;
        List<Point> listaPontos = new List<Point>();        
-        CaixinhaDesenho cxDesenho = new CaixinhaDesenho();
-        int contLinha,contagemLinhasExibir = 0;
+       CaixinhaDesenho cxDesenho = new CaixinhaDesenho();
+       int contLinha,contagemLinhasExibir = 0;
         public frnPrincipal()
         {
             InitializeComponent();            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
@@ -65,7 +65,8 @@ namespace TrabalhoGrafica2
             // Apagar pintando o mesmo desenho de branco
             // Magia não mexa
             gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex*2)],
-                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2)+1)]);
+                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2) +1)]);
+
             recalcularIndices(listaDesenhos.SelectedIndex);
             listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
         }
@@ -90,7 +91,6 @@ namespace TrabalhoGrafica2
             gPn1.DrawLine(new Pen(Color.White, 4), 200, 300, 200, 400);
 
 
-
             //p1.Parent = pnlDesenho;
             pnlDesenho.Controls.Add(p1);
             //pnlDesenho.Controls[0].Location = new Point(0, 0);
@@ -102,16 +102,15 @@ namespace TrabalhoGrafica2
 
         private void recalcularIndices(int posicaoReduzida)
         {
-            int indiceAtual = 0;
-            posicaoReduzida++;
+            int indiceAtual = 0;            
             if (contLinha == 0)
                 return;
 
-            // Se o só existia 1 desenho na lista e este foi removido é só remover direto 2 indices
-            if ((listaPontos.Count) == 2)
-            {                
+            // Caso o indice removido seja o primeiro da lista
+            if (posicaoReduzida == 0)
+            {
                 contLinha--;
-                listaPontos.RemoveAt(1);
+                listaPontos.RemoveAt(0);
                 listaPontos.RemoveAt(0);
                 return;
             }
@@ -126,10 +125,12 @@ namespace TrabalhoGrafica2
             }
 
             // Caso exista mais de 1 item na lista
-            indiceAtual = posicaoReduzida*2;
-            while (indiceAtual <= listaPontos.Count)
+            // Aumenta 1 item da lista de desenhos e depois multiplica por 2 pq cada desenho tem 2 pontos 
+            indiceAtual = (posicaoReduzida+1)*2;
+            while (indiceAtual < listaPontos.Count)
             {
-                listaPontos[indiceAtual-2] = listaPontos[indiceAtual - 1];
+                // 2 pois cada linha/reta posssui 2 pontos 
+                listaPontos[indiceAtual-2] = listaPontos[indiceAtual];
                 indiceAtual++;
             }
             listaPontos.RemoveAt(listaPontos.Count-1);

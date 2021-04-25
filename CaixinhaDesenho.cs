@@ -32,7 +32,7 @@ namespace TrabalhoGrafica2
                 if (txtX1.Text != "")
                     return Int32.Parse(txtX1.Text);
                 else
-                    return 0;
+                    return 50;
             }           
             
         }
@@ -44,7 +44,7 @@ namespace TrabalhoGrafica2
                 if (txtX2.Text != "")
                     return Int32.Parse(txtX2.Text);
                 else
-                    return 0;
+                    return 50;
             }
 
         }
@@ -55,7 +55,7 @@ namespace TrabalhoGrafica2
                 if (txtY1.Text != "")
                         return Int32.Parse(txtY1.Text);
                 else
-                    return 0;
+                    return 100;
             }
 
         }
@@ -66,7 +66,7 @@ namespace TrabalhoGrafica2
                 if (txtY2.Text != "")
                     return Int32.Parse(txtY2.Text);
                 else
-                    return 0;
+                    return 400;
             }
 
         }
@@ -118,6 +118,20 @@ namespace TrabalhoGrafica2
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtY1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CaixinhaDesenho_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pintar = true;
+                this.Close();
             }
         }
     }

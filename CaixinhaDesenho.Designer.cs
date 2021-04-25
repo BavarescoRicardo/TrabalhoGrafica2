@@ -57,14 +57,14 @@
             this.panel1.Controls.Add(this.txtX1);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 242);
+            this.panel1.Size = new System.Drawing.Size(418, 321);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(168, 71);
+            this.label5.Location = new System.Drawing.Point(235, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 15);
             this.label5.TabIndex = 9;
@@ -74,7 +74,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(51, 71);
+            this.label4.Location = new System.Drawing.Point(74, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 15);
             this.label4.TabIndex = 8;
@@ -83,7 +83,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 194);
+            this.button1.Location = new System.Drawing.Point(75, 194);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 23);
             this.button1.TabIndex = 7;
@@ -93,18 +93,19 @@
             // 
             // txtY2
             // 
-            this.txtY2.Location = new System.Drawing.Point(119, 149);
+            this.txtY2.Location = new System.Drawing.Point(178, 146);
             this.txtY2.Name = "txtY2";
-            this.txtY2.Size = new System.Drawing.Size(100, 20);
+            this.txtY2.Size = new System.Drawing.Size(123, 20);
             this.txtY2.TabIndex = 6;
             this.txtY2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtY2_KeyPress);
             // 
             // txtY1
             // 
-            this.txtY1.Location = new System.Drawing.Point(119, 89);
+            this.txtY1.Location = new System.Drawing.Point(178, 89);
             this.txtY1.Name = "txtY1";
-            this.txtY1.Size = new System.Drawing.Size(100, 20);
+            this.txtY1.Size = new System.Drawing.Size(123, 20);
             this.txtY1.TabIndex = 5;
+            this.txtY1.TextChanged += new System.EventHandler(this.txtY1_TextChanged);
             this.txtY1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtY1_KeyPress);
             // 
             // label3
@@ -132,16 +133,16 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 35);
+            this.label1.Size = new System.Drawing.Size(295, 35);
             this.label1.TabIndex = 2;
             this.label1.Text = "Linha";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtX2
             // 
-            this.txtX2.Location = new System.Drawing.Point(13, 149);
+            this.txtX2.Location = new System.Drawing.Point(13, 146);
             this.txtX2.Name = "txtX2";
-            this.txtX2.Size = new System.Drawing.Size(100, 20);
+            this.txtX2.Size = new System.Drawing.Size(133, 20);
             this.txtX2.TabIndex = 1;
             this.txtX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtX2_KeyPress);
             // 
@@ -149,7 +150,7 @@
             // 
             this.txtX1.Location = new System.Drawing.Point(13, 89);
             this.txtX1.Name = "txtX1";
-            this.txtX1.Size = new System.Drawing.Size(100, 20);
+            this.txtX1.Size = new System.Drawing.Size(133, 20);
             this.txtX1.TabIndex = 0;
             this.txtX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtX1_KeyPress);
             // 
@@ -157,10 +158,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 240);
+            this.ClientSize = new System.Drawing.Size(413, 315);
             this.Controls.Add(this.panel1);
             this.Name = "CaixinhaDesenho";
             this.Text = "CaixinhaDesenho";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CaixinhaDesenho_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

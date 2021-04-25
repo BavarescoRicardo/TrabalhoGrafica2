@@ -52,6 +52,12 @@
     <Compile Include="CaixinhaDesenho.Designer.cs">
       <DependentUpon>CaixinhaDesenho.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariaCoordenadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariaCoordenadas.Designer.cs">
+      <DependentUpon>FormulariaCoordenadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frnPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CaixinhaDesenho.resx">
       <DependentUpon>CaixinhaDesenho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariaCoordenadas.resx">
+      <DependentUpon>FormulariaCoordenadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frnPrincipal.resx">
       <DependentUpon>frnPrincipal.cs</DependentUpon>
