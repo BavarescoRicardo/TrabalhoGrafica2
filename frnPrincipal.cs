@@ -15,8 +15,8 @@ namespace TrabalhoGrafica2
     {
         // Objetos de desenho
        Graphics gr;
-       List<Point> listaPontos = new List<Point>();        
-       CaixinhaDesenho cxDesenho = new CaixinhaDesenho();
+       List<Point> listaPontos = new List<Point>();
+        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
        int contLinha,contagemLinhasExibir = 0;
         public frnPrincipal()
         {
@@ -52,7 +52,7 @@ namespace TrabalhoGrafica2
             listaPontos.Add(new Point(x1, y1));
             listaPontos.Add(new Point(x2, y2));
 
-            listaDesenhos.Items.Add("Deseninho "+ contagemLinhasExibir);
+            listaDesenhos.Items.Add(cxDesenho.propNomeLinha + " "+ contagemLinhasExibir);
             contLinha++;
             contagemLinhasExibir++;
         }

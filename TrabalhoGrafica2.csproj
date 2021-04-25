@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaixinhaDesenho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CaixinhaDesenho.Designer.cs">
-      <DependentUpon>CaixinhaDesenho.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormulariaCoordenadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,9 +63,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CaixinhaDesenho.resx">
-      <DependentUpon>CaixinhaDesenho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormulariaCoordenadas.resx">
       <DependentUpon>FormulariaCoordenadas.cs</DependentUpon>
     </EmbeddedResource>
