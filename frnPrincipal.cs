@@ -27,7 +27,28 @@ namespace TrabalhoGrafica2
         {
             cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
-            desenharLinha();
+
+            // Decidir qual função de Desenho deve ser executada
+            switch (cxDesenho.propTipoDesenho)
+            {
+                case 0:
+                    desenharPonto();
+                    break;
+
+                case 1:
+                    desenharLinha();
+                    break;
+
+                case 2:
+                    desenharPonto();
+                    break;
+
+                case 3:
+                    desenharPonto();
+                    break;
+                default:
+                    break;
+            }            
         }
 
         public void desenharLinha()
@@ -52,10 +73,37 @@ namespace TrabalhoGrafica2
             listaPontos.Add(new Point(x1, y1));
             listaPontos.Add(new Point(x2, y2));
 
-            listaDesenhos.Items.Add(cxDesenho.propNomeLinha + " "+ contagemLinhasExibir);
+            listaDesenhos.Items.Add(cxDesenho.propNome + " "+ contagemLinhasExibir);
             contLinha++;
             contagemLinhasExibir++;
         }
+
+
+        public void desenharPonto()
+        {
+            if (!cxDesenho.propPintar)
+            {
+                return;
+            }
+            // Create pen.
+            Pen blackPen = new Pen(Color.Red, 3);
+
+            // Create coordinates of points that define line.
+            int x1 = cxDesenho.propX1;
+            int y1 = cxDesenho.propY1;
+
+            // Draw line to screen.
+            gr = pnlDesenho.CreateGraphics();
+            gr.DrawLine(blackPen, x1, y1, x1+5, y1+5);
+
+            listaPontos.Add(new Point(x1, y1));
+            listaPontos.Add(new Point(x1+5, y1+5));
+
+            listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
+            contLinha++;
+            contagemLinhasExibir++;
+        }
+
 
         private void btnSair_Click(object sender, EventArgs e)
         {

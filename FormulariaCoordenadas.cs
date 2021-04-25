@@ -18,7 +18,7 @@ namespace TrabalhoGrafica2
             
         }
 
-        private enum TipoDesenho
+        public enum TipoDesenho
         {
             Ponto = 0,
             Linha = 1,
@@ -46,25 +46,40 @@ namespace TrabalhoGrafica2
             }
         }
 
-
-
-        // Coordenadas Linha - Propriedades
-        public string propNomeLinha
+        // Propriedade - nome é global para todas as abas
+        public string propNome
         {
             get
             {
-                return txtNomeLinha.Text;
+                return txtNome.Text;
             }
         }
 
+
+        // Coordenadas Linha - Propriedades
         public int propX1
         {
             get
-            {
-                if (txtX1Linha.Text != "")
-                    return Int32.Parse(txtX1Linha.Text);
-                else
-                    return 0;
+            {                
+                switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
+                {
+                    case 0:
+                        return Int32.Parse(txtX1Ponto.Text);
+
+                    case 1:
+                        return Int32.Parse(txtX1Linha.Text);
+
+                    case 2:
+                        return Int32.Parse(txtX1Ponto.Text);
+
+                    case 3:
+                        return Int32.Parse(txtX1Ponto.Text);
+
+                    default:
+                        break;
+                }
+                return 0;
+                
             }
 
         }
@@ -73,10 +88,24 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                if (txtY1Linha.Text != "")
-                    return Int32.Parse(txtY1Linha.Text);
-                else
-                    return 400;
+                switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
+                {
+                    case 0:
+                        return Int32.Parse(txtY1Ponto.Text);
+
+                    case 1:
+                        return Int32.Parse(txtY1Linha.Text);
+
+                    case 2:
+                        return Int32.Parse(txtY1Ponto.Text);
+
+                    case 3:
+                        return Int32.Parse(txtY1Ponto.Text);
+
+                    default:
+                        break;
+                }
+                return 0;
             }
 
         }
@@ -85,10 +114,24 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                if (txtX1Linha.Text != "")
-                    return Int32.Parse(txtX2Linha.Text);
-                else
-                    return 0;
+                switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
+                {
+                    case 0:                        
+                        break;
+
+                    case 1:
+                        return Int32.Parse(txtX2Linha.Text);
+
+                    case 2:
+                        return Int32.Parse(txtX2Linha.Text);
+
+                    case 3:
+                        return Int32.Parse(txtX2Linha.Text);
+
+                    default:
+                        break;
+                }
+                return 0;
             }
 
         }
@@ -97,10 +140,24 @@ namespace TrabalhoGrafica2
         {
             get
             {
-                if (txtY1Linha.Text != "")
-                    return Int32.Parse(txtY2Linha.Text);
-                else
-                    return 400;
+                switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
+                {
+                    case 0:
+                        break;
+
+                    case 1:
+                        return Int32.Parse(txtY2Linha.Text);
+
+                    case 2:
+                        return Int32.Parse(txtY2Linha.Text);
+
+                    case 3:
+                        return Int32.Parse(txtY2Linha.Text);
+
+                    default:
+                        break;
+                }
+                return 0;
             }
 
         }
@@ -115,6 +172,15 @@ namespace TrabalhoGrafica2
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
+            // Validações antes de desenhar
+                // aba 1 esta preenchida
+                // aba 2 esta preenchida
+                // aba 3 esta preenchida
+                // aba 4 esta preenchida
+
+            if (txtNome.Text == "")
+                return;
+
             pintar = true;
             this.Close();
         }
