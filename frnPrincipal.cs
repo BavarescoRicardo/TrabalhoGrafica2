@@ -18,6 +18,16 @@ namespace TrabalhoGrafica2
        List<Point> listaPontos = new List<Point>();
        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
        int contLinha,contagemLinhasExibir = 0;
+
+        private enum TipoDesenhoIndiceLista
+        {
+            Ponto = 0,
+            Linha = 1,
+            Polilinha = 2,
+            Poligono = 3
+        }
+
+        private List<TipoDesenhoIndiceLista> listaTipos = new List<TipoDesenhoIndiceLista>();
         public frnPrincipal()
         {
             InitializeComponent();            
@@ -32,18 +42,22 @@ namespace TrabalhoGrafica2
             switch (cxDesenho.propTipoDesenho)
             {
                 case 0:
+                    listaTipos.Add(TipoDesenhoIndiceLista.Ponto);
                     desenharPonto();
                     break;
 
                 case 1:
+                    listaTipos.Add(TipoDesenhoIndiceLista.Linha);
                     desenharLinha();
                     break;
 
                 case 2:
+                    listaTipos.Add(TipoDesenhoIndiceLista.Polilinha);
                     desenharPolilinha();
                     break;
 
                 case 3:
+                    listaTipos.Add(TipoDesenhoIndiceLista.Poligono);
                     desenharPoligono();
                     break;
                 default:
@@ -129,13 +143,12 @@ namespace TrabalhoGrafica2
                 {
                     gr.DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual-1], cxDesenho.listaPoliLinha[pontoAtual]);
                     pontoAtual += 1;
-                }
+                }               
                 
-
-                listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
                 contLinha++;
                 contagemLinhasExibir++;
             }
+            listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
         }
 
         public void desenharPoligono()
@@ -149,7 +162,7 @@ namespace TrabalhoGrafica2
 
             // Laço de numero de pontos na lista
             int pontoAtual = 0;
-            while (pontoAtual < cxDesenho.listaPoliLinha.Count)
+            while (pontoAtual < cxDesenho.listaPoligono.Count)
             {
                 // Desenhar no painel principal
                 gr = pnlDesenho.CreateGraphics();
@@ -163,14 +176,17 @@ namespace TrabalhoGrafica2
                     gr.DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual - 1], cxDesenho.listaPoligono[pontoAtual]);
                     pontoAtual += 1;
                 }
-
-
-                listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
+                
                 contLinha++;
                 contagemLinhasExibir++;
             }
+            // Linha que deve fechar o poligono
             gr = pnlDesenho.CreateGraphics();
-            gr.DrawLine(blackPen, cxDesenho.listaPoligono[cxDesenho.listaPoligono.Count- 1], cxDesenho.listaPoligono[1]);
+            gr.DrawLine(blackPen, cxDesenho.listaPoligono[cxDesenho.listaPoligono.Count- 1], cxDesenho.listaPoligono[0]);
+
+            listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
+            contLinha++;
+            contagemLinhasExibir++;
         }
 
 
@@ -179,10 +195,24 @@ namespace TrabalhoGrafica2
             // Validações
             if (!(listaDesenhos.SelectedIndex >= 0))
                 return;
-            // Apagar pintando o mesmo desenho de branco
-            // Magia não mexa
-            gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex*2)],
-                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex*2) +1)]);
+
+            // Verifica o tipo do objeto pelo seu indice na lisa
+            switch (listaTipos[listaDesenhos.SelectedIndex])
+            {
+                case TipoDesenhoIndiceLista.Polilinha:
+                    pnlDesenho.Refresh();
+                    break;
+
+                case TipoDesenhoIndiceLista.Poligono:
+                    pnlDesenho.Refresh();
+                    break;
+
+                default:
+                    // Apagar pintando o mesmo desenho de branco            
+                    gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
+                        listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
+                    break;
+            }
 
             recalcularIndices(listaDesenhos.SelectedIndex);
             listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
@@ -231,6 +261,9 @@ namespace TrabalhoGrafica2
             // Caso o indice removido seja o primeiro da lista
             if (posicaoReduzida == 0)
             {
+                if (listaTipos[listaDesenhos.SelectedIndex] == TipoDesenhoIndiceLista.Polilinha)
+                    return;
+
                 contLinha--;
                 listaPontos.RemoveAt(0);
                 listaPontos.RemoveAt(0);

@@ -243,7 +243,7 @@ namespace TrabalhoGrafica2
             listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text), Int32.Parse(txtY1Poligono.Text)));
 
             // Adiciona visualmente o novo ponto inserido no componente da tela
-            listPoligono.Items.Add("X: " + txtY1Poligono.Text + "    Y: " + txtY1Poligono.Text);
+            listPoligono.Items.Add("X: " + txtX1Poligono.Text + "    Y: " + txtY1Poligono.Text);
 
             // Limpar as caixas de texto
             txtX1PoliLinha.Text = "";
