@@ -51,6 +51,9 @@
             this.txtX1Linha = new System.Windows.Forms.TextBox();
             this.tabPLine = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRmvPonto = new System.Windows.Forms.Button();
+            this.btnAddPonto = new System.Windows.Forms.Button();
+            this.listPolilinha = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,6 +62,9 @@
             this.txtX1PoliLinha = new System.Windows.Forms.TextBox();
             this.tabPoligono = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRmvPontoPoligono = new System.Windows.Forms.Button();
+            this.btnAddPontoPoligono = new System.Windows.Forms.Button();
+            this.listPoligono = new System.Windows.Forms.ListBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -67,12 +73,6 @@
             this.txtX1Poligono = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.listPolilinha = new System.Windows.Forms.ListBox();
-            this.btnAddPonto = new System.Windows.Forms.Button();
-            this.btnRmvPonto = new System.Windows.Forms.Button();
-            this.btnRmvPontoPoligono = new System.Windows.Forms.Button();
-            this.btnAddPontoPoligono = new System.Windows.Forms.Button();
-            this.listPoligono = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.abaDesenho.SuspendLayout();
             this.tabPonto.SuspendLayout();
@@ -171,6 +171,7 @@
             this.abaDesenho.SelectedIndex = 0;
             this.abaDesenho.Size = new System.Drawing.Size(476, 357);
             this.abaDesenho.TabIndex = 0;
+            this.abaDesenho.SelectedIndexChanged += new System.EventHandler(this.abaDesenho_SelectedIndexChanged);
             // 
             // tabPonto
             // 
@@ -318,6 +319,34 @@
             this.panel3.Size = new System.Drawing.Size(468, 324);
             this.panel3.TabIndex = 1;
             // 
+            // btnRmvPonto
+            // 
+            this.btnRmvPonto.Location = new System.Drawing.Point(272, 257);
+            this.btnRmvPonto.Name = "btnRmvPonto";
+            this.btnRmvPonto.Size = new System.Drawing.Size(125, 23);
+            this.btnRmvPonto.TabIndex = 41;
+            this.btnRmvPonto.Text = "Remover Ponto";
+            this.btnRmvPonto.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPonto
+            // 
+            this.btnAddPonto.Location = new System.Drawing.Point(271, 197);
+            this.btnAddPonto.Name = "btnAddPonto";
+            this.btnAddPonto.Size = new System.Drawing.Size(126, 23);
+            this.btnAddPonto.TabIndex = 40;
+            this.btnAddPonto.Text = "Adicionar Ponto";
+            this.btnAddPonto.UseVisualStyleBackColor = true;
+            this.btnAddPonto.Click += new System.EventHandler(this.btnAddPonto_Click);
+            // 
+            // listPolilinha
+            // 
+            this.listPolilinha.FormattingEnabled = true;
+            this.listPolilinha.ItemHeight = 16;
+            this.listPolilinha.Location = new System.Drawing.Point(14, 114);
+            this.listPolilinha.Name = "listPolilinha";
+            this.listPolilinha.Size = new System.Drawing.Size(251, 180);
+            this.listPolilinha.TabIndex = 39;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -400,6 +429,34 @@
             this.panel4.Size = new System.Drawing.Size(468, 320);
             this.panel4.TabIndex = 1;
             // 
+            // btnRmvPontoPoligono
+            // 
+            this.btnRmvPontoPoligono.Location = new System.Drawing.Point(280, 261);
+            this.btnRmvPontoPoligono.Name = "btnRmvPontoPoligono";
+            this.btnRmvPontoPoligono.Size = new System.Drawing.Size(125, 23);
+            this.btnRmvPontoPoligono.TabIndex = 44;
+            this.btnRmvPontoPoligono.Text = "Remover Ponto";
+            this.btnRmvPontoPoligono.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPontoPoligono
+            // 
+            this.btnAddPontoPoligono.Location = new System.Drawing.Point(279, 201);
+            this.btnAddPontoPoligono.Name = "btnAddPontoPoligono";
+            this.btnAddPontoPoligono.Size = new System.Drawing.Size(126, 23);
+            this.btnAddPontoPoligono.TabIndex = 43;
+            this.btnAddPontoPoligono.Text = "Adicionar Ponto";
+            this.btnAddPontoPoligono.UseVisualStyleBackColor = true;
+            this.btnAddPontoPoligono.Click += new System.EventHandler(this.btnAddPontoPoligono_Click);
+            // 
+            // listPoligono
+            // 
+            this.listPoligono.FormattingEnabled = true;
+            this.listPoligono.ItemHeight = 16;
+            this.listPoligono.Location = new System.Drawing.Point(22, 118);
+            this.listPoligono.Name = "listPoligono";
+            this.listPoligono.Size = new System.Drawing.Size(251, 180);
+            this.listPoligono.TabIndex = 42;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -475,62 +532,6 @@
             this.panel5.Size = new System.Drawing.Size(385, 93);
             this.panel5.TabIndex = 1;
             // 
-            // listPolilinha
-            // 
-            this.listPolilinha.FormattingEnabled = true;
-            this.listPolilinha.ItemHeight = 16;
-            this.listPolilinha.Location = new System.Drawing.Point(14, 114);
-            this.listPolilinha.Name = "listPolilinha";
-            this.listPolilinha.Size = new System.Drawing.Size(251, 180);
-            this.listPolilinha.TabIndex = 39;
-            // 
-            // btnAddPonto
-            // 
-            this.btnAddPonto.Location = new System.Drawing.Point(271, 197);
-            this.btnAddPonto.Name = "btnAddPonto";
-            this.btnAddPonto.Size = new System.Drawing.Size(126, 23);
-            this.btnAddPonto.TabIndex = 40;
-            this.btnAddPonto.Text = "Adicionar Ponto";
-            this.btnAddPonto.UseVisualStyleBackColor = true;
-            this.btnAddPonto.Click += new System.EventHandler(this.btnAddPonto_Click);
-            // 
-            // btnRmvPonto
-            // 
-            this.btnRmvPonto.Location = new System.Drawing.Point(272, 257);
-            this.btnRmvPonto.Name = "btnRmvPonto";
-            this.btnRmvPonto.Size = new System.Drawing.Size(125, 23);
-            this.btnRmvPonto.TabIndex = 41;
-            this.btnRmvPonto.Text = "Remover Ponto";
-            this.btnRmvPonto.UseVisualStyleBackColor = true;
-            // 
-            // btnRmvPontoPoligono
-            // 
-            this.btnRmvPontoPoligono.Location = new System.Drawing.Point(280, 261);
-            this.btnRmvPontoPoligono.Name = "btnRmvPontoPoligono";
-            this.btnRmvPontoPoligono.Size = new System.Drawing.Size(125, 23);
-            this.btnRmvPontoPoligono.TabIndex = 44;
-            this.btnRmvPontoPoligono.Text = "Remover Ponto";
-            this.btnRmvPontoPoligono.UseVisualStyleBackColor = true;
-            // 
-            // btnAddPontoPoligono
-            // 
-            this.btnAddPontoPoligono.Location = new System.Drawing.Point(279, 201);
-            this.btnAddPontoPoligono.Name = "btnAddPontoPoligono";
-            this.btnAddPontoPoligono.Size = new System.Drawing.Size(126, 23);
-            this.btnAddPontoPoligono.TabIndex = 43;
-            this.btnAddPontoPoligono.Text = "Adicionar Ponto";
-            this.btnAddPontoPoligono.UseVisualStyleBackColor = true;
-            this.btnAddPontoPoligono.Click += new System.EventHandler(this.btnAddPontoPoligono_Click);
-            // 
-            // listPoligono
-            // 
-            this.listPoligono.FormattingEnabled = true;
-            this.listPoligono.ItemHeight = 16;
-            this.listPoligono.Location = new System.Drawing.Point(22, 118);
-            this.listPoligono.Name = "listPoligono";
-            this.listPoligono.Size = new System.Drawing.Size(251, 180);
-            this.listPoligono.TabIndex = 42;
-            // 
             // FormulariaCoordenadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -602,11 +603,11 @@
         private System.Windows.Forms.TextBox txtY1Poligono;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtX1Poligono;
-        private System.Windows.Forms.ListBox listPolilinha;
         private System.Windows.Forms.Button btnRmvPonto;
         private System.Windows.Forms.Button btnAddPonto;
         private System.Windows.Forms.Button btnRmvPontoPoligono;
         private System.Windows.Forms.Button btnAddPontoPoligono;
-        private System.Windows.Forms.ListBox listPoligono;
+        public System.Windows.Forms.ListBox listPoligono;
+        public System.Windows.Forms.ListBox listPolilinha;
     }
 }

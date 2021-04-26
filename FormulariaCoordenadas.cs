@@ -66,10 +66,10 @@ namespace TrabalhoGrafica2
                 switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
                 {
                     case 0:
-                        return Int32.Parse(txtX1Ponto.Text);
+                        return Int32.Parse(txtX1Ponto.Text)+250;
 
                     case 1:
-                        return Int32.Parse(txtX1Linha.Text);
+                        return Int32.Parse(txtX1Linha.Text) + 250;
 
                     case 2:
                         break;
@@ -92,10 +92,10 @@ namespace TrabalhoGrafica2
                 switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
                 {
                     case 0:
-                        return Int32.Parse(txtY1Ponto.Text);
+                        return (-1 * Int32.Parse(txtY1Ponto.Text)) + 250;
 
                     case 1:
-                        return Int32.Parse(txtY1Linha.Text);
+                        return (-1 * Int32.Parse(txtY1Linha.Text)) + 250;
 
                     case 2:
                         break;
@@ -121,7 +121,7 @@ namespace TrabalhoGrafica2
                         break;
 
                     case 1:
-                        return Int32.Parse(txtX2Linha.Text);
+                        return Int32.Parse(txtX2Linha.Text) + 250;
 
                     case 2:
                         break;
@@ -147,7 +147,7 @@ namespace TrabalhoGrafica2
                         break;
 
                     case 1:
-                        return Int32.Parse(txtY2Linha.Text);
+                        return (-1 * Int32.Parse(txtY2Linha.Text)) + 250;
 
                     case 2:
                         break;
@@ -173,7 +173,7 @@ namespace TrabalhoGrafica2
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            // Validações antes de desenhar
+            // Validações antes de desenhar fazer para proxima etapa
                 // aba 1 esta preenchida
                 // aba 2 esta preenchida
                 // aba 3 esta preenchida
@@ -227,7 +227,7 @@ namespace TrabalhoGrafica2
         private void btnAddPonto_Click(object sender, EventArgs e)
         {
             // Adiciona os pontos digitados em um array de pontos
-            listaPoliLinha.Add(new Point(Int32.Parse(txtX1PoliLinha.Text), Int32.Parse(txtY1PoliLinha.Text)));
+            listaPoliLinha.Add(new Point(Int32.Parse(txtX1PoliLinha.Text) + 250, (-1 * Int32.Parse(txtY1PoliLinha.Text)) + 250));
 
             // Adiciona visualmente o novo ponto inserido no componente da tela
             listPolilinha.Items.Add("X: " + txtX1PoliLinha.Text + "    Y: " + txtY1PoliLinha.Text);
@@ -240,14 +240,25 @@ namespace TrabalhoGrafica2
         private void btnAddPontoPoligono_Click(object sender, EventArgs e)
         {
             // Adiciona os pontos digitados em um array de pontos
-            listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text), Int32.Parse(txtY1Poligono.Text)));
+            listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text) + 250, (-1*Int32.Parse(txtY1Poligono.Text)) + 250));
 
             // Adiciona visualmente o novo ponto inserido no componente da tela
             listPoligono.Items.Add("X: " + txtX1Poligono.Text + "    Y: " + txtY1Poligono.Text);
 
             // Limpar as caixas de texto
-            txtX1PoliLinha.Text = "";
-            txtY1PoliLinha.Text = "";
+            txtX1Poligono.Text = "";
+            txtY1Poligono.Text = "";
+        }
+
+        private void abaDesenho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpar arrays e listas visuais ao mudar aba da tela
+            listaPoligono.Clear();
+            listaPoliLinha.Clear();
+            listPoligono.Items.Clear();
+            listPolilinha.Items.Clear();
+
+            txtNome.Text = "";            
         }
     }    
 }
