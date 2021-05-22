@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabalhoGrafica2.Desenhos;
 
 namespace TrabalhoGrafica2
 {
@@ -17,7 +18,7 @@ namespace TrabalhoGrafica2
        Graphics gr;
        List<Point> listaPontos = new List<Point>();
        List<int> vetorPontos = new List<int>();
-        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
+       FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
        int contLinha,contagemLinhasExibir = 0;
 
         private enum TipoDesenhoIndiceLista
@@ -38,7 +39,8 @@ namespace TrabalhoGrafica2
         {
             cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
-
+            desenharPainelTeste();
+            return;
             // Decidir qual função de Desenho deve ser executada
             switch (cxDesenho.propTipoDesenho)
             {
@@ -70,6 +72,11 @@ namespace TrabalhoGrafica2
                 default:
                     break;
             }            
+        }
+        public void desenharPainelTeste()
+        {
+            DesenhoTransparente pd = new DesenhoTransparente();
+            pnlDesenho.Controls.Add(pd.painel);
         }
 
         public void desenharLinha()

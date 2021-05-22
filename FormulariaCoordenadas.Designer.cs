@@ -159,6 +159,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(212, 23);
             this.txtNome.TabIndex = 19;
+            this.txtNome.Text = "testepainel";
             // 
             // abaDesenho
             // 
@@ -249,6 +250,7 @@
             this.txtY2Linha.Name = "txtY2Linha";
             this.txtY2Linha.Size = new System.Drawing.Size(123, 23);
             this.txtY2Linha.TabIndex = 24;
+            this.txtY2Linha.Text = "350";
             // 
             // txtY1Linha
             // 
@@ -256,6 +258,7 @@
             this.txtY1Linha.Name = "txtY1Linha";
             this.txtY1Linha.Size = new System.Drawing.Size(123, 23);
             this.txtY1Linha.TabIndex = 23;
+            this.txtY1Linha.Text = "100";
             // 
             // label7
             // 
@@ -283,6 +286,7 @@
             this.txtX2Linha.Name = "txtX2Linha";
             this.txtX2Linha.Size = new System.Drawing.Size(133, 23);
             this.txtX2Linha.TabIndex = 20;
+            this.txtX2Linha.Text = "400";
             // 
             // txtX1Linha
             // 
@@ -290,6 +294,7 @@
             this.txtX1Linha.Name = "txtX1Linha";
             this.txtX1Linha.Size = new System.Drawing.Size(133, 23);
             this.txtX1Linha.TabIndex = 19;
+            this.txtX1Linha.Text = "50";
             // 
             // tabPLine
             // 
