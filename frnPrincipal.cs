@@ -8,18 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TrabalhoGrafica2.Desenhos;
 
 namespace TrabalhoGrafica2
 {
     public partial class frnPrincipal : Form
     {
         // Objetos de desenho
-       Graphics gr;
-       List<Point> listaPontos = new List<Point>();
-       List<int> vetorPontos = new List<int>();
-       FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
-       int contLinha,contagemLinhasExibir = 0;
+        List<DesenhoTransparente> listaDenTra = new List<DesenhoTransparente>();
+        Graphics gr;
+        List<Point> listaPontos = new List<Point>();
+        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
+        int contLinha,contagemLinhasExibir = 0;
 
         private enum TipoDesenhoIndiceLista
         {
@@ -39,33 +38,28 @@ namespace TrabalhoGrafica2
         {
             cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
-            desenharPainelTeste();
-            return;
+            
             // Decidir qual função de Desenho deve ser executada
             switch (cxDesenho.propTipoDesenho)
             {
                 case 0:
                     listaTipos.Add(TipoDesenhoIndiceLista.Ponto);
-                    vetorPontos.Add(2);
                     desenharPonto();
                     break;
 
                 case 1:
                     listaTipos.Add(TipoDesenhoIndiceLista.Linha);
-                    vetorPontos.Add(2);
-                    desenharLinha();
+                    desenharPainelTeste();
                     break;
 
                 case 2:
                     listaTipos.Add(TipoDesenhoIndiceLista.Polilinha);
-                    vetorPontos.Add(cxDesenho.listaPoliLinha.Count);
                     desenharPolilinha();
                     limparListaPolis();
                     break;
 
                 case 3:
                     listaTipos.Add(TipoDesenhoIndiceLista.Poligono);
-                    vetorPontos.Add(cxDesenho.listaPoligono.Count);
                     desenharPoligono();
                     limparListaPolis();
                     break;
@@ -75,8 +69,25 @@ namespace TrabalhoGrafica2
         }
         public void desenharPainelTeste()
         {
-            DesenhoTransparente pd = new DesenhoTransparente();
-            pnlDesenho.Controls.Add(pd.painel);
+            // Desenhar eixos x e y
+            if(!(listaDenTra.Count > 0)) 
+            {
+                gr = pnlDesenho.CreateGraphics();
+                gr.DrawLine(new Pen(Color.Black,2), 0, 250, 500, 250);
+                gr.DrawLine(new Pen(Color.Black, 2), 250, 0, 250, 500);
+            }
+            listaTipos.Add(TipoDesenhoIndiceLista.Linha);
+            listaDenTra.Add(new DesenhoTransparente(cxDesenho.propX1, cxDesenho.propX2, cxDesenho.propY1, cxDesenho.propY2));
+
+            listaDenTra[listaDenTra.Count - 1].Show();
+            listaDesenhos.Items.Add(listaDenTra[listaDenTra.Count - 1].ToString());
+
+
+            for (int cont = 0; cont < pnlDesenho.Controls.Count; cont++)
+            {
+                listaDenTra[cont].BringToFront();
+            }
+            
         }
 
         public void desenharLinha()
@@ -224,44 +235,18 @@ namespace TrabalhoGrafica2
 
                 default:
                     // Apagar pintando o mesmo desenho de branco            
-                    gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
-                        listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
+                    /*                    gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
+                                            listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
 
-                    // Recalcula e remove da lista
-                    recalcularIndices(listaDesenhos.SelectedIndex);
-                    listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
+                                        // Recalcula e remove da lista
+                                        recalcularIndices(listaDesenhos.SelectedIndex);
+                                        listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);*/
+                    listaDenTra[listaDesenhos.SelectedIndex].Visible = false;
+                    listaDenTra.RemoveAt(listaDesenhos.SelectedIndex);
                     break;
-            }          
+            }
+            listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
         }
-/*
- * Talvez seja mais inteligente usar uma lista de paineis para cada desenho com o fundo transparente 
-        void testespaineu()
-        {
-            Panel p1 = new Panel();
-//                        p1.Width = 400;
-//                        p1.Height = 400;
-            p1.Dock = DockStyle.Fill;
-            p1.BackColor = Color.GreenYellow;
-            
-            p1.Visible = true;            
-            p1.BringToFront();
-            Graphics gPn1;
-            gPn1 = p1.CreateGraphics();
-            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
-            gPn1.DrawLine(new Pen(Color.Red, 3), 10, 10, 200, 200);
-            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
-            gPn1.DrawLine(new Pen(Color.Green, 4), 200, 300, 200, 400);
-            gPn1.DrawLine(new Pen(Color.White, 4), 200, 300, 200, 400);
-
-
-            //p1.Parent = pnlDesenho;
-            pnlDesenho.Controls.Add(p1);
-            //pnlDesenho.Controls[0].Location = new Point(0, 0);
-            //            pnlDesenho.Controls[0].Visible = true;
-            //            pnlDesenho.Controls[0].BringToFront();
-            //  pnlDesenho.Controls[0]
-        }
-*/
 
         private void apagarPolicoisa()
         {

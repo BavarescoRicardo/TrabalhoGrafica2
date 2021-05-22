@@ -44,12 +44,18 @@ namespace TrabalhoGrafica2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 511);
+            this.ClientSize = new System.Drawing.Size(517, 511);
+            this.ControlBox = false;
             this.Controls.Add(this.painel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DesenhoTransparente";
+            this.Opacity = 0.95D;
+            this.ShowIcon = false;
             this.Text = "DesenhoTransparente";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.DesenhoTransparente_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DesenhoTransparente_Paint);
+            this.Controls.SetChildIndex(this.painel, 0);
             this.ResumeLayout(false);
 
         }

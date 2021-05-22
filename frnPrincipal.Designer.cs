@@ -182,6 +182,7 @@
             this.ClientSize = new System.Drawing.Size(765, 543);
             this.Controls.Add(this.panel1);
             this.Name = "frnPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -192,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listaDesenhos;
@@ -203,6 +203,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnReodn;
         public System.Windows.Forms.Panel pnlDesenho;
+        public System.Windows.Forms.Panel panel3;
     }
 }
 

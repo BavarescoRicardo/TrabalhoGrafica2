@@ -9,5 +9,4 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\Tra
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frnPrincipal.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csprojAssemblyReference.cache
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.FormulariaCoordenadas.resources
-C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.Desenhos.ControleNovo.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.DesenhoTransparente.resources
