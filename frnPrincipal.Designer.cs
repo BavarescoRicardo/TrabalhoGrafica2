@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnReodn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,7 +38,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.listaDesenhos = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pnlDesenho = new System.Windows.Forms.Panel();
+            this.paineldesenho = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -47,12 +46,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.paineldesenho);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.pnlDesenho);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(763, 544);
+            this.panel1.Size = new System.Drawing.Size(998, 586);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -69,7 +68,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.btnReodn);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
@@ -81,16 +79,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(206, 507);
             this.panel3.TabIndex = 1;
-            // 
-            // btnReodn
-            // 
-            this.btnReodn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnReodn.Location = new System.Drawing.Point(0, 454);
-            this.btnReodn.Name = "btnReodn";
-            this.btnReodn.Size = new System.Drawing.Size(206, 53);
-            this.btnReodn.TabIndex = 7;
-            this.btnReodn.Text = "Reodenar";
-            this.btnReodn.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -164,22 +152,19 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pnlDesenho
+            // paineldesenho
             // 
-            this.pnlDesenho.AllowDrop = true;
-            this.pnlDesenho.BackColor = System.Drawing.SystemColors.Info;
-            this.pnlDesenho.CausesValidation = false;
-            this.pnlDesenho.Location = new System.Drawing.Point(222, 7);
-            this.pnlDesenho.Name = "pnlDesenho";
-            this.pnlDesenho.Size = new System.Drawing.Size(500, 500);
-            this.pnlDesenho.TabIndex = 0;
-            this.pnlDesenho.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesenho_Paint);
+            this.paineldesenho.BackColor = System.Drawing.SystemColors.Window;
+            this.paineldesenho.Location = new System.Drawing.Point(222, 12);
+            this.paineldesenho.Name = "paineldesenho";
+            this.paineldesenho.Size = new System.Drawing.Size(772, 567);
+            this.paineldesenho.TabIndex = 2;
             // 
             // frnPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 543);
+            this.ClientSize = new System.Drawing.Size(999, 586);
             this.Controls.Add(this.panel1);
             this.Name = "frnPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -201,9 +186,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnReodn;
-        public System.Windows.Forms.Panel pnlDesenho;
         public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel paineldesenho;
     }
 }
 

@@ -14,10 +14,11 @@ namespace TrabalhoGrafica2
     public partial class frnPrincipal : Form
     {
         // Objetos de desenho
-        List<DesenhoTransparente> listaDenTra = new List<DesenhoTransparente>();
-        Graphics gr;
+        List<GraphicsPath> path = new List<GraphicsPath>();
+        Panel pain = new Panel();        
+        List<Graphics> listaG = new List<Graphics>();
         List<Point> listaPontos = new List<Point>();
-        FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
+        public FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
         int contLinha,contagemLinhasExibir = 0;
 
         private enum TipoDesenhoIndiceLista
@@ -31,14 +32,15 @@ namespace TrabalhoGrafica2
         private List<TipoDesenhoIndiceLista> listaTipos = new List<TipoDesenhoIndiceLista>();
         public frnPrincipal()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             cxDesenho.propPintar = false;            
             cxDesenho.ShowDialog(this);
-            
+
             // Decidir qual função de Desenho deve ser executada
             switch (cxDesenho.propTipoDesenho)
             {
@@ -69,25 +71,13 @@ namespace TrabalhoGrafica2
         }
         public void desenharPainelTeste()
         {
-            // Desenhar eixos x e y
-            if(!(listaDenTra.Count > 0)) 
+            if (!cxDesenho.propPintar)
             {
-                gr = pnlDesenho.CreateGraphics();
-                gr.DrawLine(new Pen(Color.Black,2), 0, 250, 500, 250);
-                gr.DrawLine(new Pen(Color.Black, 2), 250, 0, 250, 500);
+                return;
             }
-            listaTipos.Add(TipoDesenhoIndiceLista.Linha);
-            listaDenTra.Add(new DesenhoTransparente(cxDesenho.propX1, cxDesenho.propX2, cxDesenho.propY1, cxDesenho.propY2));
+            this.Refresh();
+            // Desenho sera feito no metodo paint 
 
-            listaDenTra[listaDenTra.Count - 1].Show();
-            listaDesenhos.Items.Add(listaDenTra[listaDenTra.Count - 1].ToString());
-
-
-            for (int cont = 0; cont < pnlDesenho.Controls.Count; cont++)
-            {
-                listaDenTra[cont].BringToFront();
-            }
-            
         }
 
         public void desenharLinha()
@@ -106,11 +96,8 @@ namespace TrabalhoGrafica2
             int y2 = cxDesenho.propY2;
 
             // Draw line to screen.
-            gr = pnlDesenho.CreateGraphics();
-            gr.DrawLine(blackPen, x1, y1, x2, y2);
-
-            listaPontos.Add(new Point(x1, y1));
-            listaPontos.Add(new Point(x2, y2));
+//            listaG.Add(pain.CreateGraphics());
+            listaG[listaG.Count-1].DrawLine(blackPen, x1, y1, x2, y2);
 
             listaDesenhos.Items.Add(cxDesenho.propNome + " "+ contagemLinhasExibir);
             contLinha++;
@@ -125,24 +112,35 @@ namespace TrabalhoGrafica2
                 return;
             }
             // Create pincel
-            Pen blackPen = new Pen(Color.Red, 3);
+            Pen blackPen = new Pen(Color.Black, 3);
 
-            // Create coordinates of points that define line.
+            // Desenhar no painel principal
             int x1 = cxDesenho.propX1;
             int y1 = cxDesenho.propY1;
 
-            // Desenhar no painel principal
-            gr = pnlDesenho.CreateGraphics();
-            gr.DrawLine(blackPen, x1, y1, x1+5, y1+5);
+            // Draw line to screen.
+            listaG.Add(pain.CreateGraphics());
+            listaTipos.Add(TipoDesenhoIndiceLista.Ponto);
 
-            listaPontos.Add(new Point(x1, y1));
-            listaPontos.Add(new Point(x1+5, y1+5));
 
-            listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
-            contLinha++;
-            contagemLinhasExibir++;
+            DesenhoTransparente dest = new DesenhoTransparente(cxDesenho.propX1, cxDesenho.propX1+5, cxDesenho.propY1, cxDesenho.propY1+5);
+            dest.dsnho();
+//            dest.Show();
+            listaDesenhos.Items.Add(dest.ToString());
+
+/*            listaBitmapes.Add(dest.propAreaDesenho);
+            pain.DrawToBitmap(listaBitmapes[listaBitmapes.Count-1], pain.Bounds);
+            listaG[listaG.Count - 1].DrawImage(listaBitmapes[listaBitmapes.Count - 1], 0, 0, 500, 500);
+*/
+
+            Bitmap bitmap;
+//            bitmap.InitializeLifetimeService();
+            bitmap = dest.propAreaDesenho;
+
+            listaG.Add(pain.CreateGraphics());
+            listaG[listaG.Count-1].DrawImage(bitmap, 0, 0);
+            
         }
-
 
         public void desenharPolilinha()
         {
@@ -158,15 +156,15 @@ namespace TrabalhoGrafica2
             while (pontoAtual < cxDesenho.listaPoliLinha.Count)
             {
                 // Desenhar no painel principal
-                gr = pnlDesenho.CreateGraphics();
+                listaG.Add(pain.CreateGraphics());
                 if (pontoAtual == 0)
                 {
-                    gr.DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual], cxDesenho.listaPoliLinha[pontoAtual + 1]);
+                    listaG[listaG.Count-1].DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual], cxDesenho.listaPoliLinha[pontoAtual + 1]);
                     pontoAtual += 2;
                 }
                 else
                 {
-                    gr.DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual-1], cxDesenho.listaPoliLinha[pontoAtual]);
+                    listaG[listaG.Count - 1].DrawLine(blackPen, cxDesenho.listaPoliLinha[pontoAtual-1], cxDesenho.listaPoliLinha[pontoAtual]);
                     pontoAtual += 1;
                 }               
                 
@@ -190,15 +188,15 @@ namespace TrabalhoGrafica2
             while (pontoAtual < cxDesenho.listaPoligono.Count)
             {
                 // Desenhar no painel principal
-                gr = pnlDesenho.CreateGraphics();
+                listaG.Add(pain.CreateGraphics());
                 if (pontoAtual == 0)
                 {
-                    gr.DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual], cxDesenho.listaPoligono[pontoAtual + 1]);
+                    listaG[listaG.Count - 1].DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual], cxDesenho.listaPoligono[pontoAtual + 1]);
                     pontoAtual += 2;
                 }
                 else
                 {
-                    gr.DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual - 1], cxDesenho.listaPoligono[pontoAtual]);
+                    listaG[listaG.Count-1].DrawLine(blackPen, cxDesenho.listaPoligono[pontoAtual - 1], cxDesenho.listaPoligono[pontoAtual]);
                     pontoAtual += 1;
                 }
                 
@@ -206,8 +204,8 @@ namespace TrabalhoGrafica2
                 contagemLinhasExibir++;
             }
             // Linha que deve fechar o poligono
-            gr = pnlDesenho.CreateGraphics();
-            gr.DrawLine(blackPen, cxDesenho.listaPoligono[cxDesenho.listaPoligono.Count- 1], cxDesenho.listaPoligono[0]);
+            listaG.Add(pain.CreateGraphics());
+            listaG[listaG.Count - 1].DrawLine(blackPen, cxDesenho.listaPoligono[cxDesenho.listaPoligono.Count- 1], cxDesenho.listaPoligono[0]);
 
             listaDesenhos.Items.Add(cxDesenho.propNome + " " + contagemLinhasExibir);
             contLinha++;
@@ -226,23 +224,18 @@ namespace TrabalhoGrafica2
             {
                 case TipoDesenhoIndiceLista.Polilinha:
 //                    apagarPolicoisa();
-                    pnlDesenho.Refresh();
+                    pain.Refresh();
                     break;
 
                 case TipoDesenhoIndiceLista.Poligono:
-                    pnlDesenho.Refresh();
+                    pain.Refresh();
+                    break;
+                case TipoDesenhoIndiceLista.Ponto:
+                case TipoDesenhoIndiceLista.Linha:
+
                     break;
 
                 default:
-                    // Apagar pintando o mesmo desenho de branco            
-                    /*                    gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
-                                            listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
-
-                                        // Recalcula e remove da lista
-                                        recalcularIndices(listaDesenhos.SelectedIndex);
-                                        listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);*/
-                    listaDenTra[listaDesenhos.SelectedIndex].Visible = false;
-                    listaDenTra.RemoveAt(listaDesenhos.SelectedIndex);
                     break;
             }
             listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
@@ -253,7 +246,7 @@ namespace TrabalhoGrafica2
             // laço para contar quantos pontos existem na polilnha
             // while alguma coisa
             // Apagar pintando o mesmo desenho de branco            
-            gr.DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
+            listaG[listaG.Count - 1].DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
                 listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
         }
 
@@ -296,8 +289,27 @@ namespace TrabalhoGrafica2
             listaPontos.RemoveAt(listaPontos.Count-1);
             listaPontos.RemoveAt(listaPontos.Count-1);
         }
-        private void pnlDesenho_Paint(object sender, PaintEventArgs e)
+        private void pain_Paint(object sender, PaintEventArgs e)
         {
+            //Create empty bitmap image of original size
+            if (cxDesenho.propPintar != false)
+            {
+                listaG.Add(pain.CreateGraphics());
+                listaG[listaG.Count - 1].DrawLine(new Pen(Color.DarkRed, 4), cxDesenho.propX1, cxDesenho.propX2, cxDesenho.propY1, cxDesenho.propY2);
+
+                MessageBox.Show("Trocar ordem do senh");
+                for (int cc = 1; cc < pain.Controls.Count-cc; cc++) {
+                    pain.Controls.SetChildIndex(pain.Controls[pain.Controls.Count-cc], 0);
+                }
+
+                MessageBox.Show("Apagar o ultimo desenho");
+                GraphicsPath caminho = new GraphicsPath();
+                caminho.AddLine(cxDesenho.propX1, cxDesenho.propX2, cxDesenho.propY1, cxDesenho.propY2);
+                listaG[listaG.Count - 1].SetClip(caminho);                
+                listaG[listaG.Count - 1].Clear(Color.Transparent);
+                listaG[listaG.Count - 1].ResetClip();
+            }
+            
         }
 
         private void limparListaPolis()
