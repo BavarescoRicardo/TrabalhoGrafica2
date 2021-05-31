@@ -1,20 +1,18 @@
-﻿using System;
+﻿using ArenaDeBatalha.GUI;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TrabalhoGrafica2
 {
     public partial class frnPrincipal : Form
     {
+        // Classe do jogo que uso no painel para exibir os desenhos
+        FormPrincipal frmJogo;
+
         // Objetos de desenho
-        List<GraphicsPath> path = new List<GraphicsPath>();
         Panel pain = new Panel();        
         List<Graphics> listaG = new List<Graphics>();
         List<Point> listaPontos = new List<Point>();
@@ -33,14 +31,19 @@ namespace TrabalhoGrafica2
         public frnPrincipal()
         {
             InitializeComponent();
+            frmJogo = new FormPrincipal();
+            frmJogo.Visible = true;
+            frmJogo.TopLevel = false;
+            this.paineldesenho.Controls.Add(frmJogo);
+            frmJogo.Dock = DockStyle.Fill;
 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            cxDesenho.propPintar = false;            
-            cxDesenho.ShowDialog(this);
-
+            frmJogo.Desenhar();
+            this.listaDesenhos.Items.Add("Desenho " + (listaDesenhos.Items.Count + 1).ToString());
+            return;
             // Decidir qual função de Desenho deve ser executada
             switch (cxDesenho.propTipoDesenho)
             {

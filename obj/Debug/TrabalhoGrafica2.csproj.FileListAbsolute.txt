@@ -10,7 +10,7 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\Tra
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csprojAssemblyReference.cache
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.FormulariaCoordenadas.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.DesenhoTransparente.resources
-C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csprojAssemblyReference.cache
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csproj.AssemblyReference.cache
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.DesenhoTransparente.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.FormulariaCoordenadas.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frnPrincipal.resources
@@ -20,5 +20,11 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.exe.config
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.exe
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\TrabalhoGrafica2.pdb
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\ArenaDeBatalha.GUI.exe
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\ArenaDeBatalha.ObjetosDoJogo.dll
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\ArenaDeBatalha.GUI.pdb
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\ArenaDeBatalha.GUI.exe.config
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\ArenaDeBatalha.ObjetosDoJogo.pdb
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.csproj.CopyComplete
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.exe
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.pdb
