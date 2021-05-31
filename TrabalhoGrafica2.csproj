@@ -59,11 +59,11 @@
     <Compile Include="FormulariaCoordenadas.Designer.cs">
       <DependentUpon>FormulariaCoordenadas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frnPrincipal.cs">
+    <Compile Include="frnGrafica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frnPrincipal.Designer.cs">
-      <DependentUpon>frnPrincipal.cs</DependentUpon>
+    <Compile Include="frnGrafica.Designer.cs">
+      <DependentUpon>frnGrafica.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +73,8 @@
     <EmbeddedResource Include="FormulariaCoordenadas.resx">
       <DependentUpon>FormulariaCoordenadas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frnPrincipal.resx">
-      <DependentUpon>frnPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frnGrafica.resx">
+      <DependentUpon>frnGrafica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +103,10 @@
     <ProjectReference Include="..\ArenaDeBatalha.GUI\ArenaDeBatalha.GUI.csproj">
       <Project>{f825982b-c9f3-4151-ab22-955dc42febbb}</Project>
       <Name>ArenaDeBatalha.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArenaDeBatalha.ObjetosDoJogo\ArenaDeBatalha.GameObjects.csproj">
+      <Project>{0C5E13B9-363B-4847-913E-5EE77E96E642}</Project>
+      <Name>ArenaDeBatalha.GameObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

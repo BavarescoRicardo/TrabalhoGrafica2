@@ -16,7 +16,7 @@ namespace TrabalhoGrafica2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frnPrincipal());
+            Application.Run(new frnGrafica());
         }
     }
 }

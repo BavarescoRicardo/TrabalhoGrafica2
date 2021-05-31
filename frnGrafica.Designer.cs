@@ -1,6 +1,6 @@
 ﻿namespace TrabalhoGrafica2
 {
-    partial class frnPrincipal
+    partial class frnGrafica
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.paineldesenho = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.listaDesenhos = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.paineldesenho = new System.Windows.Forms.Panel();
+            this.btnGirar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,14 @@
             this.panel1.Size = new System.Drawing.Size(998, 586);
             this.panel1.TabIndex = 0;
             // 
+            // paineldesenho
+            // 
+            this.paineldesenho.BackColor = System.Drawing.SystemColors.Window;
+            this.paineldesenho.Location = new System.Drawing.Point(222, 12);
+            this.paineldesenho.Name = "paineldesenho";
+            this.paineldesenho.Size = new System.Drawing.Size(772, 567);
+            this.paineldesenho.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -68,6 +77,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel3.Controls.Add(this.btnGirar);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
@@ -152,21 +162,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // paineldesenho
+            // btnGirar
             // 
-            this.paineldesenho.BackColor = System.Drawing.SystemColors.Window;
-            this.paineldesenho.Location = new System.Drawing.Point(222, 12);
-            this.paineldesenho.Name = "paineldesenho";
-            this.paineldesenho.Size = new System.Drawing.Size(772, 567);
-            this.paineldesenho.TabIndex = 2;
+            this.btnGirar.Location = new System.Drawing.Point(38, 451);
+            this.btnGirar.Name = "btnGirar";
+            this.btnGirar.Size = new System.Drawing.Size(109, 23);
+            this.btnGirar.TabIndex = 7;
+            this.btnGirar.Text = "Girar";
+            this.btnGirar.UseVisualStyleBackColor = true;
+            this.btnGirar.Click += new System.EventHandler(this.btnGirar_Click);
             // 
-            // frnPrincipal
+            // frnGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 586);
             this.Controls.Add(this.panel1);
-            this.Name = "frnPrincipal";
+            this.Name = "frnGrafica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -188,6 +200,7 @@
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel paineldesenho;
+        private System.Windows.Forms.Button btnGirar;
     }
 }
 
