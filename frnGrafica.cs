@@ -10,7 +10,7 @@ namespace TrabalhoGrafica2
     public partial class frnGrafica : Form
     {
         // Classe do jogo que uso no painel para exibir os desenhos
-        FormPrincipal frmJogo;
+        FormJogoPrincipal frmJogo;
 
         // Objetos de desenho
         Panel pain = new Panel();        
@@ -31,7 +31,7 @@ namespace TrabalhoGrafica2
         public frnGrafica()
         {
             InitializeComponent();
-            frmJogo = new FormPrincipal();
+            frmJogo = new FormJogoPrincipal();
             frmJogo.Visible = true;
             frmJogo.TopLevel = false;
             this.paineldesenho.Controls.Add(frmJogo);
@@ -218,30 +218,18 @@ namespace TrabalhoGrafica2
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            // Validações
-            if (!(listaDesenhos.SelectedIndex >= 0))
-                return;
-
-            // Verifica o tipo do objeto pelo seu indice na lisa
-            switch (listaTipos[listaDesenhos.SelectedIndex])
+            // Valida se existe desenho selecionado
+            if (!(this.listaDesenhos.SelectedIndex >= 0))
             {
-                case TipoDesenhoIndiceLista.Polilinha:
-//                    apagarPolicoisa();
-                    pain.Refresh();
-                    break;
-
-                case TipoDesenhoIndiceLista.Poligono:
-                    pain.Refresh();
-                    break;
-                case TipoDesenhoIndiceLista.Ponto:
-                case TipoDesenhoIndiceLista.Linha:
-
-                    break;
-
-                default:
-                    break;
+                MessageBox.Show("Nenhum item marcado!");
+                return;
             }
-            listaDesenhos.Items.RemoveAt(listaDesenhos.SelectedIndex);
+            int indiceSel = this.listaDesenhos.SelectedIndex + 1;
+            MessageBox.Show("foi selecionado o desenho:  " + indiceSel.ToString() + ",  para ser rotacionado!");
+            frmJogo.propListaObjetosDesenho[indiceSel].Active = false;
+            //            frmJogo.propListaObjetosDesenho[indiceSel].Destroy();
+            this.listaDesenhos.Items.RemoveAt(indiceSel - 1);
+
         }
 
         private void apagarPolicoisa()
@@ -329,6 +317,50 @@ namespace TrabalhoGrafica2
 //            frmJogo.propListaObjetosDesenho[indiceSel].Destroy();
             this.listaDesenhos.Items.RemoveAt(indiceSel-1);
 
+        }
+
+        private void btnEsq_Click(object sender, EventArgs e)
+        {
+            if (!(frmJogo.propListaObjetosDesenho.Count >= 0))
+                return;
+            // Movimenta view porta para a esquerda e desenhos para a direita
+            for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
+            {
+                frmJogo.propListaObjetosDesenho[cont].Left = frmJogo.propListaObjetosDesenho[cont].Left + 20;
+            }
+        }
+
+        private void btnDir_Click(object sender, EventArgs e)
+        {
+            if (!(frmJogo.propListaObjetosDesenho.Count >= 0))
+                return;
+            // Movimenta view porta para a esquerda e desenhos para a direita
+            for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
+            {
+                frmJogo.propListaObjetosDesenho[cont].Left = frmJogo.propListaObjetosDesenho[cont].Left - 20;
+            }
+        }
+
+        private void btnCima_Click(object sender, EventArgs e)
+        {
+            if (!(frmJogo.propListaObjetosDesenho.Count >= 0))
+                return;
+            // Movimenta view porta para a esquerda e desenhos para a direita
+            for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
+            {
+                frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top + 20;
+            }
+        }
+
+        private void btnBaixo_Click(object sender, EventArgs e)
+        {
+            if (!(frmJogo.propListaObjetosDesenho.Count >= 0))
+                return;
+            // Movimenta view porta para a esquerda e desenhos para a direita
+            for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
+            {
+                frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top - 20;
+            }
         }
 
         private void limparListaPolis()

@@ -32,14 +32,14 @@
             this.paineldesenho = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGirar = new System.Windows.Forms.Button();
+            this.btnBaixo = new System.Windows.Forms.Button();
+            this.btnCima = new System.Windows.Forms.Button();
+            this.btnDir = new System.Windows.Forms.Button();
+            this.btnEsq = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.listaDesenhos = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnGirar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -78,10 +78,10 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel3.Controls.Add(this.btnGirar);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnBaixo);
+            this.panel3.Controls.Add(this.btnCima);
+            this.panel3.Controls.Add(this.btnDir);
+            this.panel3.Controls.Add(this.btnEsq);
             this.panel3.Controls.Add(this.btnRemover);
             this.panel3.Controls.Add(this.listaDesenhos);
             this.panel3.Controls.Add(this.btnAdd);
@@ -90,41 +90,55 @@
             this.panel3.Size = new System.Drawing.Size(206, 507);
             this.panel3.TabIndex = 1;
             // 
-            // button4
+            // btnGirar
             // 
-            this.button4.Location = new System.Drawing.Point(75, 147);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "*";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGirar.Location = new System.Drawing.Point(38, 451);
+            this.btnGirar.Name = "btnGirar";
+            this.btnGirar.Size = new System.Drawing.Size(109, 23);
+            this.btnGirar.TabIndex = 7;
+            this.btnGirar.Text = "Girar";
+            this.btnGirar.UseVisualStyleBackColor = true;
+            this.btnGirar.Click += new System.EventHandler(this.btnGirar_Click);
             // 
-            // button3
+            // btnBaixo
             // 
-            this.button3.Location = new System.Drawing.Point(76, 80);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "^";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBaixo.Location = new System.Drawing.Point(75, 147);
+            this.btnBaixo.Name = "btnBaixo";
+            this.btnBaixo.Size = new System.Drawing.Size(50, 23);
+            this.btnBaixo.TabIndex = 6;
+            this.btnBaixo.Text = "*";
+            this.btnBaixo.UseVisualStyleBackColor = true;
+            this.btnBaixo.Click += new System.EventHandler(this.btnBaixo_Click);
             // 
-            // button2
+            // btnCima
             // 
-            this.button2.Location = new System.Drawing.Point(117, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 40);
-            this.button2.TabIndex = 4;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCima.Location = new System.Drawing.Point(76, 80);
+            this.btnCima.Name = "btnCima";
+            this.btnCima.Size = new System.Drawing.Size(50, 23);
+            this.btnCima.TabIndex = 5;
+            this.btnCima.Text = "^";
+            this.btnCima.UseVisualStyleBackColor = true;
+            this.btnCima.Click += new System.EventHandler(this.btnCima_Click);
             // 
-            // button1
+            // btnDir
             // 
-            this.button1.Location = new System.Drawing.Point(50, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDir.Location = new System.Drawing.Point(117, 105);
+            this.btnDir.Name = "btnDir";
+            this.btnDir.Size = new System.Drawing.Size(30, 40);
+            this.btnDir.TabIndex = 4;
+            this.btnDir.Text = ">>";
+            this.btnDir.UseVisualStyleBackColor = true;
+            this.btnDir.Click += new System.EventHandler(this.btnDir_Click);
+            // 
+            // btnEsq
+            // 
+            this.btnEsq.Location = new System.Drawing.Point(50, 104);
+            this.btnEsq.Name = "btnEsq";
+            this.btnEsq.Size = new System.Drawing.Size(30, 40);
+            this.btnEsq.TabIndex = 3;
+            this.btnEsq.Text = "<<";
+            this.btnEsq.UseVisualStyleBackColor = true;
+            this.btnEsq.Click += new System.EventHandler(this.btnEsq_Click);
             // 
             // btnRemover
             // 
@@ -162,16 +176,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnGirar
-            // 
-            this.btnGirar.Location = new System.Drawing.Point(38, 451);
-            this.btnGirar.Name = "btnGirar";
-            this.btnGirar.Size = new System.Drawing.Size(109, 23);
-            this.btnGirar.TabIndex = 7;
-            this.btnGirar.Text = "Girar";
-            this.btnGirar.UseVisualStyleBackColor = true;
-            this.btnGirar.Click += new System.EventHandler(this.btnGirar_Click);
-            // 
             // frnGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,10 +198,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listaDesenhos;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEsq;
+        private System.Windows.Forms.Button btnCima;
+        private System.Windows.Forms.Button btnDir;
+        private System.Windows.Forms.Button btnBaixo;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel paineldesenho;
         private System.Windows.Forms.Button btnGirar;
