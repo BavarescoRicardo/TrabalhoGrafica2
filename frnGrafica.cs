@@ -232,15 +232,6 @@ namespace TrabalhoGrafica2
 
         }
 
-        private void apagarPolicoisa()
-        {
-            // laço para contar quantos pontos existem na polilnha
-            // while alguma coisa
-            // Apagar pintando o mesmo desenho de branco            
-            listaG[listaG.Count - 1].DrawLine(new Pen(Color.White, 3), listaPontos[listaDesenhos.SelectedIndex == 0 ? 0 : (listaDesenhos.SelectedIndex * 2)],
-                listaPontos[listaDesenhos.SelectedIndex == 0 ? 1 : ((listaDesenhos.SelectedIndex * 2) + 1)]);
-        }
-
         private void recalcularIndices(int posicaoReduzida)
         {
             int indiceAtual = 0;            
