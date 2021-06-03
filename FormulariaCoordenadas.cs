@@ -66,10 +66,10 @@ namespace TrabalhoGrafica2
                 switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
                 {
                     case 0:
-                        return Int32.Parse(txtX1Ponto.Text)+250;
+                        return Int32.Parse(txtX1Ponto.Text);
 
                     case 1:
-                        return Int32.Parse(txtX1Linha.Text) + 250;
+                        return Int32.Parse(txtX1Linha.Text);
 
                     case 2:
                         break;
@@ -92,10 +92,10 @@ namespace TrabalhoGrafica2
                 switch ((int)(TipoDesenho)abaDesenho.SelectedIndex)
                 {
                     case 0:
-                        return (-1 * Int32.Parse(txtY1Ponto.Text)) + 250;
+                        return (Int32.Parse(txtY1Ponto.Text));
 
                     case 1:
-                        return (-1 * Int32.Parse(txtY1Linha.Text)) + 250;
+                        return (Int32.Parse(txtY1Linha.Text));
 
                     case 2:
                         break;
@@ -121,7 +121,7 @@ namespace TrabalhoGrafica2
                         break;
 
                     case 1:
-                        return Int32.Parse(txtX2Linha.Text) + 250;
+                        return Int32.Parse(txtX2Linha.Text);
 
                     case 2:
                         break;
@@ -147,7 +147,7 @@ namespace TrabalhoGrafica2
                         break;
 
                     case 1:
-                        return (-1 * Int32.Parse(txtY2Linha.Text)) + 250;
+                        return (Int32.Parse(txtY2Linha.Text));
 
                     case 2:
                         break;
@@ -227,7 +227,7 @@ namespace TrabalhoGrafica2
         private void btnAddPonto_Click(object sender, EventArgs e)
         {
             // Adiciona os pontos digitados em um array de pontos
-            listaPoliLinha.Add(new Point(Int32.Parse(txtX1PoliLinha.Text) + 250, (-1 * Int32.Parse(txtY1PoliLinha.Text)) + 250));
+            listaPoliLinha.Add(new Point(Int32.Parse(txtX1PoliLinha.Text), (-1 * Int32.Parse(txtY1PoliLinha.Text))));
 
             // Adiciona visualmente o novo ponto inserido no componente da tela
             listPolilinha.Items.Add("X: " + txtX1PoliLinha.Text + "    Y: " + txtY1PoliLinha.Text);
@@ -240,7 +240,7 @@ namespace TrabalhoGrafica2
         private void btnAddPontoPoligono_Click(object sender, EventArgs e)
         {
             // Adiciona os pontos digitados em um array de pontos
-            listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text) + 250, (-1*Int32.Parse(txtY1Poligono.Text)) + 250));
+            listaPoligono.Add(new Point(Int32.Parse(txtX1Poligono.Text), (-1*Int32.Parse(txtY1Poligono.Text))));
 
             // Adiciona visualmente o novo ponto inserido no componente da tela
             listPoligono.Items.Add("X: " + txtX1Poligono.Text + "    Y: " + txtY1Poligono.Text);

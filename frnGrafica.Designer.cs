@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(998, 586);
+            this.panel1.Size = new System.Drawing.Size(897, 642);
             this.panel1.TabIndex = 0;
             // 
             // paineldesenho
@@ -60,14 +60,14 @@
             this.paineldesenho.BackColor = System.Drawing.SystemColors.Window;
             this.paineldesenho.Location = new System.Drawing.Point(222, 12);
             this.paineldesenho.Name = "paineldesenho";
-            this.paineldesenho.Size = new System.Drawing.Size(772, 567);
+            this.paineldesenho.Size = new System.Drawing.Size(588, 585);
             this.paineldesenho.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 512);
+            this.label1.Location = new System.Drawing.Point(386, 599);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 23);
             this.label1.TabIndex = 0;
@@ -87,7 +87,7 @@
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Location = new System.Drawing.Point(10, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(206, 507);
+            this.panel3.Size = new System.Drawing.Size(206, 597);
             this.panel3.TabIndex = 1;
             // 
             // btnGirar
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 586);
+            this.ClientSize = new System.Drawing.Size(901, 642);
             this.Controls.Add(this.panel1);
             this.Name = "frnGrafica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
