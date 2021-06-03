@@ -12,13 +12,6 @@ namespace TrabalhoGrafica2
         // Classe do jogo que uso no painel para exibir os desenhos
         FormJogoPrincipal frmJogo;
 
-        // Objetos de desenho
-        Panel pain = new Panel();        
-        List<Graphics> listaG = new List<Graphics>();
-        List<Point> listaPontos = new List<Point>();
-        public FormulariaCoordenadas cxDesenho = new FormulariaCoordenadas();
-        int contLinha,contagemLinhasExibir = 0;
-
         private enum TipoDesenhoIndiceLista
         {
             Ponto = 0,
@@ -27,7 +20,6 @@ namespace TrabalhoGrafica2
             Poligono = 3
         }
 
-        private List<TipoDesenhoIndiceLista> listaTipos = new List<TipoDesenhoIndiceLista>();
         public frnGrafica()
         {
             InitializeComponent();
@@ -57,7 +49,6 @@ namespace TrabalhoGrafica2
             int indiceSel = this.listaDesenhos.SelectedIndex + 1;
             MessageBox.Show("foi selecionado o desenho:  " + indiceSel.ToString() + ",  para ser rotacionado!");
             frmJogo.propListaObjetosDesenho[indiceSel].Active = false;
-            //            frmJogo.propListaObjetosDesenho[indiceSel].Destroy();
             this.listaDesenhos.Items.RemoveAt(indiceSel - 1);
 
         }
@@ -120,14 +111,6 @@ namespace TrabalhoGrafica2
             {
                 frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top - 20;
             }
-        }
-
-        private void limparListaPolis()
-        {
-            cxDesenho.listaPoligono.Clear();
-            cxDesenho.listaPoliLinha.Clear();
-            cxDesenho.listPoligono.Items.Clear();
-            cxDesenho.listPolilinha.Items.Clear();
         }
     }   
 

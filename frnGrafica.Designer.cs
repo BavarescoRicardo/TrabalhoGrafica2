@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(897, 642);
+            this.panel1.Size = new System.Drawing.Size(834, 642);
             this.panel1.TabIndex = 0;
             // 
             // paineldesenho
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 642);
+            this.ClientSize = new System.Drawing.Size(832, 630);
             this.Controls.Add(this.panel1);
             this.Name = "frnGrafica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

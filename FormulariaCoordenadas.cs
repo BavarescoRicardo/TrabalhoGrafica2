@@ -256,9 +256,7 @@ namespace TrabalhoGrafica2
             listaPoligono.Clear();
             listaPoliLinha.Clear();
             listPoligono.Items.Clear();
-            listPolilinha.Items.Clear();
-
-            //txtNome.Text = "";            
+            listPolilinha.Items.Clear();           
         }
     }    
 }
