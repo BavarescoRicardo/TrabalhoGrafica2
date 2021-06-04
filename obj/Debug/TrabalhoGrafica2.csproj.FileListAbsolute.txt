@@ -28,3 +28,4 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.exe
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.pdb
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frnGrafica.resources
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frmMatrizes.resources

@@ -11,6 +11,7 @@ namespace TrabalhoGrafica2
     {
         // Classe do jogo que uso no painel para exibir os desenhos
         FormJogoPrincipal frmJogo;
+        frmMatrizes telaMatrizes;
 
         private enum TipoDesenhoIndiceLista
         {
@@ -111,6 +112,24 @@ namespace TrabalhoGrafica2
             {
                 frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top - 20;
             }
+        }
+
+        private void btnMatrizes_Click(object sender, EventArgs e)
+        {
+            // Valida se existe desenho selecionado
+            if (!(this.listaDesenhos.SelectedIndex >= 0))
+            {
+                MessageBox.Show("Nenhum item marcado!");
+                return;
+            }
+            int indiceSel = this.listaDesenhos.SelectedIndex + 1;
+            MessageBox.Show("foi selecionado o desenho:  " + indiceSel.ToString() + ",  para ser rotacionado!");
+//            frmJogo.propListaObjetosDesenho[indiceSel].Active = false;
+            //            frmJogo.propListaObjetosDesenho[indiceSel].Destroy();
+            this.listaDesenhos.Items.RemoveAt(indiceSel - 1);
+
+            telaMatrizes = new frmMatrizes(indiceSel, frmJogo.propListaObjetosDesenho[indiceSel]);
+            telaMatrizes.Visible = true;
         }
     }   
 

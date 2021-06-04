@@ -40,6 +40,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.listaDesenhos = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnMatrizes = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel3.Controls.Add(this.btnMatrizes);
             this.panel3.Controls.Add(this.btnGirar);
             this.panel3.Controls.Add(this.btnBaixo);
             this.panel3.Controls.Add(this.btnCima);
@@ -176,11 +178,22 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnMatrizes
+            // 
+            this.btnMatrizes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMatrizes.Location = new System.Drawing.Point(3, 513);
+            this.btnMatrizes.Name = "btnMatrizes";
+            this.btnMatrizes.Size = new System.Drawing.Size(203, 31);
+            this.btnMatrizes.TabIndex = 8;
+            this.btnMatrizes.Text = "Transformar Matrizes";
+            this.btnMatrizes.UseVisualStyleBackColor = true;
+            this.btnMatrizes.Click += new System.EventHandler(this.btnMatrizes_Click);
+            // 
             // frnGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 630);
+            this.ClientSize = new System.Drawing.Size(827, 630);
             this.Controls.Add(this.panel1);
             this.Name = "frnGrafica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,6 +218,7 @@
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel paineldesenho;
         private System.Windows.Forms.Button btnGirar;
+        private System.Windows.Forms.Button btnMatrizes;
     }
 }
 
