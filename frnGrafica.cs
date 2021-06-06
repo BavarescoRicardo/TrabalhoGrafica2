@@ -120,6 +120,7 @@ namespace TrabalhoGrafica2
         public void desenharEixos()
         {
             frmJogo.propListaObjetosDesenho[1].Active = true;
+            frmJogo.DesenharEixos();
             frmJogo.Update();
         }
     }   
