@@ -30,22 +30,22 @@ namespace TrabalhoGrafica2
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDesenho = new System.Windows.Forms.Label();
             this.controleAba = new System.Windows.Forms.TabControl();
             this.abaRotaciona = new System.Windows.Forms.TabPage();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.abaTransl = new System.Windows.Forms.TabPage();
-            this.lblAngulo = new System.Windows.Forms.Label();
             this.txtAngulo = new System.Windows.Forms.TextBox();
+            this.lblAngulo = new System.Windows.Forms.Label();
+            this.abaTransl = new System.Windows.Forms.TabPage();
             this.abaMovMatriz = new System.Windows.Forms.TabPage();
-            this.lblCima = new System.Windows.Forms.Label();
-            this.lblDir = new System.Windows.Forms.Label();
-            this.lblEsq = new System.Windows.Forms.Label();
-            this.lblBaixo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblBaixo = new System.Windows.Forms.Label();
+            this.lblEsq = new System.Windows.Forms.Label();
+            this.lblDir = new System.Windows.Forms.Label();
+            this.lblCima = new System.Windows.Forms.Label();
+            this.lblDesenho = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.controleAba.SuspendLayout();
             this.abaRotaciona.SuspendLayout();
@@ -61,16 +61,6 @@ namespace TrabalhoGrafica2
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 247);
             this.panel1.TabIndex = 0;
-            // 
-            // lblDesenho
-            // 
-            this.lblDesenho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesenho.Location = new System.Drawing.Point(3, 14);
-            this.lblDesenho.Name = "lblDesenho";
-            this.lblDesenho.Size = new System.Drawing.Size(534, 38);
-            this.lblDesenho.TabIndex = 0;
-            this.lblDesenho.Text = "Indice selecionado: ";
-            this.lblDesenho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // controleAba
             // 
@@ -107,15 +97,13 @@ namespace TrabalhoGrafica2
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // abaTransl
+            // txtAngulo
             // 
-            this.abaTransl.Location = new System.Drawing.Point(4, 22);
-            this.abaTransl.Name = "abaTransl";
-            this.abaTransl.Padding = new System.Windows.Forms.Padding(3);
-            this.abaTransl.Size = new System.Drawing.Size(523, 152);
-            this.abaTransl.TabIndex = 2;
-            this.abaTransl.Text = "Translação";
-            this.abaTransl.UseVisualStyleBackColor = true;
+            this.txtAngulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtAngulo.Location = new System.Drawing.Point(206, 87);
+            this.txtAngulo.Name = "txtAngulo";
+            this.txtAngulo.Size = new System.Drawing.Size(100, 20);
+            this.txtAngulo.TabIndex = 1;
             // 
             // lblAngulo
             // 
@@ -127,13 +115,15 @@ namespace TrabalhoGrafica2
             this.lblAngulo.Text = "Angulo que deve rodar o objeto";
             this.lblAngulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAngulo
+            // abaTransl
             // 
-            this.txtAngulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtAngulo.Location = new System.Drawing.Point(206, 87);
-            this.txtAngulo.Name = "txtAngulo";
-            this.txtAngulo.Size = new System.Drawing.Size(100, 20);
-            this.txtAngulo.TabIndex = 1;
+            this.abaTransl.Location = new System.Drawing.Point(4, 22);
+            this.abaTransl.Name = "abaTransl";
+            this.abaTransl.Padding = new System.Windows.Forms.Padding(3);
+            this.abaTransl.Size = new System.Drawing.Size(523, 152);
+            this.abaTransl.TabIndex = 2;
+            this.abaTransl.Text = "Translação";
+            this.abaTransl.UseVisualStyleBackColor = true;
             // 
             // abaMovMatriz
             // 
@@ -153,61 +143,15 @@ namespace TrabalhoGrafica2
             this.abaMovMatriz.Text = "Mover matriz";
             this.abaMovMatriz.UseVisualStyleBackColor = true;
             // 
-            // lblCima
+            // button4
             // 
-            this.lblCima.AutoSize = true;
-            this.lblCima.Location = new System.Drawing.Point(351, 42);
-            this.lblCima.Name = "lblCima";
-            this.lblCima.Size = new System.Drawing.Size(13, 13);
-            this.lblCima.TabIndex = 0;
-            this.lblCima.Text = "0";
-            // 
-            // lblDir
-            // 
-            this.lblDir.AutoSize = true;
-            this.lblDir.Location = new System.Drawing.Point(399, 70);
-            this.lblDir.Name = "lblDir";
-            this.lblDir.Size = new System.Drawing.Size(13, 13);
-            this.lblDir.TabIndex = 1;
-            this.lblDir.Text = "0";
-            // 
-            // lblEsq
-            // 
-            this.lblEsq.AutoSize = true;
-            this.lblEsq.Location = new System.Drawing.Point(302, 70);
-            this.lblEsq.Name = "lblEsq";
-            this.lblEsq.Size = new System.Drawing.Size(13, 13);
-            this.lblEsq.TabIndex = 2;
-            this.lblEsq.Text = "0";
-            // 
-            // lblBaixo
-            // 
-            this.lblBaixo.AutoSize = true;
-            this.lblBaixo.Location = new System.Drawing.Point(351, 111);
-            this.lblBaixo.Name = "lblBaixo";
-            this.lblBaixo.Size = new System.Drawing.Size(13, 13);
-            this.lblBaixo.TabIndex = 3;
-            this.lblBaixo.Text = "0";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(52, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 24);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cima";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(89, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 24);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Dir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.Location = new System.Drawing.Point(52, 100);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(65, 24);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Baixo";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -219,15 +163,71 @@ namespace TrabalhoGrafica2
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // button2
             // 
-            this.button4.Location = new System.Drawing.Point(52, 100);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(65, 24);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Baixo";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button2.Location = new System.Drawing.Point(89, 61);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 24);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Dir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 24);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Cima";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblBaixo
+            // 
+            this.lblBaixo.AutoSize = true;
+            this.lblBaixo.Location = new System.Drawing.Point(351, 111);
+            this.lblBaixo.Name = "lblBaixo";
+            this.lblBaixo.Size = new System.Drawing.Size(13, 13);
+            this.lblBaixo.TabIndex = 3;
+            this.lblBaixo.Text = "0";
+            // 
+            // lblEsq
+            // 
+            this.lblEsq.AutoSize = true;
+            this.lblEsq.Location = new System.Drawing.Point(302, 70);
+            this.lblEsq.Name = "lblEsq";
+            this.lblEsq.Size = new System.Drawing.Size(13, 13);
+            this.lblEsq.TabIndex = 2;
+            this.lblEsq.Text = "0";
+            // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(399, 70);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(13, 13);
+            this.lblDir.TabIndex = 1;
+            this.lblDir.Text = "0";
+            // 
+            // lblCima
+            // 
+            this.lblCima.AutoSize = true;
+            this.lblCima.Location = new System.Drawing.Point(351, 42);
+            this.lblCima.Name = "lblCima";
+            this.lblCima.Size = new System.Drawing.Size(13, 13);
+            this.lblCima.TabIndex = 0;
+            this.lblCima.Text = "0";
+            // 
+            // lblDesenho
+            // 
+            this.lblDesenho.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesenho.Location = new System.Drawing.Point(3, 14);
+            this.lblDesenho.Name = "lblDesenho";
+            this.lblDesenho.Size = new System.Drawing.Size(534, 38);
+            this.lblDesenho.TabIndex = 0;
+            this.lblDesenho.Text = "Indice selecionado: ";
+            this.lblDesenho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMatrizes
             // 
@@ -237,6 +237,7 @@ namespace TrabalhoGrafica2
             this.Controls.Add(this.panel1);
             this.Name = "frmMatrizes";
             this.Text = "frmMatrizes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMatrizes_FormClosed);
             this.panel1.ResumeLayout(false);
             this.controleAba.ResumeLayout(false);
             this.abaRotaciona.ResumeLayout(false);

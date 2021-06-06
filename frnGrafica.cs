@@ -111,8 +111,16 @@ namespace TrabalhoGrafica2
             int indiceSelExibe = this.listaDesenhos.SelectedIndex + 1;
             MessageBox.Show("foi selecionado o desenho:  " + indiceSelExibe.ToString() + ",  para as operações com matrizes!");
 
-            telaMatrizes = new frmMatrizes(indiceSel, frmJogo.propListaObjetosDesenho);
-            telaMatrizes.Visible = true;
+            // Apagar eixos
+            frmJogo.propListaObjetosDesenho[1].Active = false;
+            telaMatrizes = new frmMatrizes(indiceSel, frmJogo.propListaObjetosDesenho, this);
+            telaMatrizes.Visible = true;            
+        }
+
+        public void desenharEixos()
+        {
+            frmJogo.propListaObjetosDesenho[1].Active = true;
+            frmJogo.Update();
         }
     }   
 

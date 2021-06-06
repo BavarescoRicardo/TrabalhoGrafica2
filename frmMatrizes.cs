@@ -1,4 +1,5 @@
-﻿using ArenaDeBatalha.ObjetosDoJogo;
+﻿using ArenaDeBatalha.GUI;
+using ArenaDeBatalha.ObjetosDoJogo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +16,17 @@ namespace TrabalhoGrafica2
     {
         private int indice;
         List<GameObject> listaJogobjeto;
+        frnGrafica graficaPrincipal;
         private GameObject Jogobjeto;
 
-        public frmMatrizes(int indice, List<GameObject> listaJogobjeto)
+        public frmMatrizes(int indice, List<GameObject> listaJogobjeto, frnGrafica graficaPrincipal)
         {
             InitializeComponent();
 
             this.listaJogobjeto = listaJogobjeto;
             this.indice = indice;
             this.Jogobjeto = listaJogobjeto[indice];
+            this.graficaPrincipal = graficaPrincipal;
 
             if (this.lblDesenho != null)
             {
@@ -75,6 +78,11 @@ namespace TrabalhoGrafica2
             // Atualizar desenho no painel
             this.Jogobjeto.UpdateObject();
             exibirCoord();
+        }
+
+        private void frmMatrizes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            graficaPrincipal.desenharEixos();
         }
     }
 }
