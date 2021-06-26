@@ -40,10 +40,11 @@ namespace TrabalhoGrafica2
 
         private void exibirCoord()
         {
-            this.lblBaixo.Text = (Jogobjeto.Top - Jogobjeto.Height).ToString();
-            this.lblCima.Text = (Jogobjeto.Top + Jogobjeto.Height).ToString();
-            this.lblDir.Text = (Jogobjeto.Left - Jogobjeto.Width).ToString();
-            this.lblEsq.Text = (Jogobjeto.Left + Jogobjeto.Width).ToString();
+            
+            this.lblBaixo.Text = (Jogobjeto.Top - Jogobjeto.desenhado.Height).ToString();
+            this.lblCima.Text = (Jogobjeto.Top + Jogobjeto.desenhado.Height).ToString();
+            this.lblDir.Text = (Jogobjeto.Left - Jogobjeto.desenhado.Width).ToString();
+            this.lblEsq.Text = (Jogobjeto.Left + Jogobjeto.desenhado.Width).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

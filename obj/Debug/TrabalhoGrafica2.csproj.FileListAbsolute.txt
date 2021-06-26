@@ -29,3 +29,5 @@ C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.pdb
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frnGrafica.resources
 C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\obj\Debug\TrabalhoGrafica2.frmMatrizes.resources
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\OpenTK.dll
+C:\Users\Ninguem\Documents\Repositorios\GraficaII\TrabJogo\TrabalhoGrafica2\bin\Debug\OpenTK.pdb

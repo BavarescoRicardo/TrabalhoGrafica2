@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using OpenTK;
 
 namespace TrabalhoGrafica2
 {
@@ -12,7 +13,6 @@ namespace TrabalhoGrafica2
         // Classe do jogo que uso no painel para exibir os desenhos
         FormJogoPrincipal frmJogo;
         frmMatrizes telaMatrizes;
-
         private enum TipoDesenhoIndiceLista
         {
             Ponto = 0,
