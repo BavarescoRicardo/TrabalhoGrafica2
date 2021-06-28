@@ -62,7 +62,7 @@ namespace TrabalhoGrafica2
             // Movimenta view porta para a esquerda e desenhos para a direita
             for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
             {
-                frmJogo.propListaObjetosDesenho[cont].Left = frmJogo.propListaObjetosDesenho[cont].Left + 20;
+                frmJogo.propListaObjetosDesenho[cont].X1 = frmJogo.propListaObjetosDesenho[cont].X1 + 20;
             }
         }
 
@@ -73,7 +73,7 @@ namespace TrabalhoGrafica2
             // Movimenta view porta para a esquerda e desenhos para a direita
             for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
             {
-                frmJogo.propListaObjetosDesenho[cont].Left = frmJogo.propListaObjetosDesenho[cont].Left - 20;
+                frmJogo.propListaObjetosDesenho[cont].X2 = frmJogo.propListaObjetosDesenho[cont].X2 - 20;
             }
         }
 
@@ -84,7 +84,7 @@ namespace TrabalhoGrafica2
             // Movimenta view porta para a esquerda e desenhos para a direita
             for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
             {
-                frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top + 20;
+                frmJogo.propListaObjetosDesenho[cont].Y2 = frmJogo.propListaObjetosDesenho[cont].Y2 + 20;
             }
         }
 
@@ -95,7 +95,7 @@ namespace TrabalhoGrafica2
             // Movimenta view porta para a esquerda e desenhos para a direita
             for (int cont = 0; cont < frmJogo.propListaObjetosDesenho.Count; cont++)
             {
-                frmJogo.propListaObjetosDesenho[cont].Top = frmJogo.propListaObjetosDesenho[cont].Top - 20;
+                frmJogo.propListaObjetosDesenho[cont].Y1 = frmJogo.propListaObjetosDesenho[cont].Y1 - 20;
             }
         }
 

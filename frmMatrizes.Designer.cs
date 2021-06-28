@@ -46,10 +46,13 @@ namespace TrabalhoGrafica2
             this.lblDir = new System.Windows.Forms.Label();
             this.lblCima = new System.Windows.Forms.Label();
             this.lblDesenho = new System.Windows.Forms.Label();
+            this.abaMovePoliMatriz = new System.Windows.Forms.TabPage();
+            this.listaDesenhos = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.controleAba.SuspendLayout();
             this.abaRotaciona.SuspendLayout();
             this.abaMovMatriz.SuspendLayout();
+            this.abaMovePoliMatriz.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +70,7 @@ namespace TrabalhoGrafica2
             this.controleAba.Controls.Add(this.abaRotaciona);
             this.controleAba.Controls.Add(this.abaTransl);
             this.controleAba.Controls.Add(this.abaMovMatriz);
+            this.controleAba.Controls.Add(this.abaMovePoliMatriz);
             this.controleAba.Location = new System.Drawing.Point(6, 55);
             this.controleAba.Name = "controleAba";
             this.controleAba.SelectedIndex = 0;
@@ -229,6 +233,25 @@ namespace TrabalhoGrafica2
             this.lblDesenho.Text = "Indice selecionado: ";
             this.lblDesenho.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // abaMovePoliMatriz
+            // 
+            this.abaMovePoliMatriz.Controls.Add(this.listaDesenhos);
+            this.abaMovePoliMatriz.Location = new System.Drawing.Point(4, 22);
+            this.abaMovePoliMatriz.Name = "abaMovePoliMatriz";
+            this.abaMovePoliMatriz.Padding = new System.Windows.Forms.Padding(3);
+            this.abaMovePoliMatriz.Size = new System.Drawing.Size(523, 152);
+            this.abaMovePoliMatriz.TabIndex = 4;
+            this.abaMovePoliMatriz.Text = "Move Poli Matriz";
+            this.abaMovePoliMatriz.UseVisualStyleBackColor = true;
+            // 
+            // listaDesenhos
+            // 
+            this.listaDesenhos.FormattingEnabled = true;
+            this.listaDesenhos.Location = new System.Drawing.Point(16, 19);
+            this.listaDesenhos.Name = "listaDesenhos";
+            this.listaDesenhos.Size = new System.Drawing.Size(196, 121);
+            this.listaDesenhos.TabIndex = 2;
+            // 
             // frmMatrizes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +267,7 @@ namespace TrabalhoGrafica2
             this.abaRotaciona.PerformLayout();
             this.abaMovMatriz.ResumeLayout(false);
             this.abaMovMatriz.PerformLayout();
+            this.abaMovePoliMatriz.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -267,5 +291,7 @@ namespace TrabalhoGrafica2
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage abaMovePoliMatriz;
+        private System.Windows.Forms.ListBox listaDesenhos;
     }
 }
